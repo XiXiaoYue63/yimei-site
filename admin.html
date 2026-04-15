@@ -10,270 +10,176 @@
 :root{
   --ink:#1C1917;--ink2:#44403C;--ink3:#78716C;--light:#A8A29E;
   --cream:#FAF8F5;--cream2:#F2EDE6;--white:#fff;
-  --rose:#C8847A;--rose-bg:#FDF8F7;--rose-light:#F9EBE9;
+  --rose:#C8847A;--rose-bg:#FDF8F7;
   --green:#1E8449;--green-bg:#EAF3DE;
   --blue:#185FA5;--blue-bg:#EBF3FB;
   --amber:#854F0B;--amber-bg:#FAEEDA;
   --red:#A32D2D;--red-bg:#FCEBEB;
-  --purple:#534AB7;--purple-bg:#EEEDFE;
   --line:#06C755;
   --border:rgba(28,25,23,.1);--border2:rgba(28,25,23,.06);
   --shadow:0 2px 12px rgba(28,25,23,.07);--shadow-lg:0 8px 32px rgba(28,25,23,.12);
-  --radius:10px;
-  --font:'Outfit',sans-serif;
+  --radius:10px;--font:'Outfit',sans-serif;
 }
 body{font-family:var(--font);background:#F5F3F0;color:var(--ink);min-height:100vh;display:flex}
 
-/* ── LOGIN ── */
-#login-wrap{
-  position:fixed;inset:0;z-index:999;
-  background:linear-gradient(135deg,#1C1917 0%,#2D1F1F 50%,#1A2D1F 100%);
-  display:flex;align-items:center;justify-content:center;
-}
-.login-card{
-  background:var(--white);border-radius:16px;padding:44px 40px;width:380px;
-  box-shadow:0 24px 64px rgba(0,0,0,.4);
-}
+/* LOGIN */
+#login-wrap{position:fixed;inset:0;z-index:999;background:linear-gradient(135deg,#1C1917 0%,#2D1F1F 50%,#1A2D1F 100%);display:flex;align-items:center;justify-content:center}
+.login-card{background:var(--white);border-radius:16px;padding:44px 40px;width:380px;box-shadow:0 24px 64px rgba(0,0,0,.4)}
 .login-brand{margin-bottom:32px}
 .login-logo{font-size:26px;font-weight:700;color:var(--ink);line-height:1}
 .login-logo em{color:var(--rose);font-style:normal}
 .login-sub{font-size:13px;color:var(--ink3);margin-top:6px}
 .login-field{margin-bottom:14px}
 .login-field label{display:block;font-size:12px;font-weight:500;color:var(--ink2);margin-bottom:5px}
-.login-field input{
-  width:100%;padding:12px 14px;border-radius:8px;
-  border:1.5px solid var(--border);font-family:var(--font);font-size:14px;color:var(--ink);
-  background:var(--cream);transition:border-color .2s;
-}
+.login-field input{width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid var(--border);font-family:var(--font);font-size:14px;color:var(--ink);background:var(--cream);transition:border-color .2s}
 .login-field input:focus{outline:none;border-color:var(--rose)}
-.login-hint{font-size:12px;color:var(--light);margin-bottom:20px}
-.login-hint span{color:var(--rose);font-weight:500}
-.btn-login{
-  width:100%;padding:13px;border-radius:8px;border:none;
-  background:var(--ink);color:var(--white);
-  font-family:var(--font);font-size:15px;font-weight:500;cursor:pointer;transition:background .2s;
-}
+.btn-login{width:100%;padding:13px;border-radius:8px;border:none;background:var(--ink);color:var(--white);font-family:var(--font);font-size:15px;font-weight:500;cursor:pointer;transition:background .2s}
 .btn-login:hover{background:var(--rose)}
 .login-err{font-size:13px;color:var(--red);text-align:center;margin-top:10px;display:none}
 
-/* ── SIDEBAR ── */
-.sidebar{
-  width:220px;min-height:100vh;background:var(--ink);
-  display:flex;flex-direction:column;flex-shrink:0;position:sticky;top:0;height:100vh;
-}
-.sidebar-logo{
-  padding:24px 20px 20px;border-bottom:1px solid rgba(255,255,255,.07);
-  font-size:18px;font-weight:700;color:var(--white);
-}
+/* SIDEBAR */
+.sidebar{width:220px;min-height:100vh;background:var(--ink);display:flex;flex-direction:column;flex-shrink:0;position:sticky;top:0;height:100vh}
+.sidebar-logo{padding:24px 20px 20px;border-bottom:1px solid rgba(255,255,255,.07);font-size:18px;font-weight:700;color:var(--white)}
 .sidebar-logo em{color:var(--rose);font-style:normal}
 .sidebar-nav{flex:1;padding:12px 0}
-.nav-group-label{
-  font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-  color:rgba(255,255,255,.25);padding:12px 20px 6px;
-}
-.nav-btn{
-  display:flex;align-items:center;gap:10px;width:100%;
-  padding:10px 20px;background:none;border:none;
-  color:rgba(255,255,255,.5);font-family:var(--font);font-size:13.5px;
-  cursor:pointer;transition:all .15s;text-align:left;border-left:3px solid transparent;
-}
+.nav-group-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);padding:12px 20px 6px}
+.nav-btn{display:flex;align-items:center;gap:10px;width:100%;padding:10px 20px;background:none;border:none;color:rgba(255,255,255,.5);font-family:var(--font);font-size:13.5px;cursor:pointer;transition:all .15s;text-align:left;border-left:3px solid transparent}
 .nav-btn:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.05)}
 .nav-btn.active{color:var(--white);background:rgba(255,255,255,.08);border-left-color:var(--rose)}
 .nav-btn svg{opacity:.7;flex-shrink:0;width:15px;height:15px}
 .nav-btn.active svg{opacity:1}
-.sidebar-footer{
-  padding:16px 20px;border-top:1px solid rgba(255,255,255,.07);
-}
+.sidebar-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,.07)}
 .sidebar-user{font-size:12px;color:rgba(255,255,255,.3)}
 .sidebar-user strong{color:rgba(255,255,255,.6);display:block;margin-bottom:2px}
-.logout-btn{
-  margin-top:8px;font-size:12px;color:rgba(255,255,255,.3);
-  background:none;border:none;cursor:pointer;font-family:var(--font);padding:0;transition:color .2s;
-}
+.logout-btn{margin-top:8px;font-size:12px;color:rgba(255,255,255,.3);background:none;border:none;cursor:pointer;font-family:var(--font);padding:0;transition:color .2s}
 .logout-btn:hover{color:var(--rose)}
 
-/* ── MAIN ── */
+/* MAIN */
 .main{flex:1;min-height:100vh;padding:28px 32px;overflow-x:hidden}
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-.page-title{font-size:20px;font-weight:600;color:var(--ink)}
-.page-title small{font-size:13px;font-weight:400;color:var(--ink3);margin-left:8px}
+.page-title{font-size:20px;font-weight:600}
 .topbar-actions{display:flex;gap:10px}
+.panel{display:none}.panel.active{display:block}
 
-/* ── PANELS ── */
-.panel{display:none}
-.panel.active{display:block}
-
-/* ── STATS ── */
+/* STATS */
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
-.stat-card{
-  background:var(--white);border-radius:var(--radius);padding:20px;
-  box-shadow:var(--shadow);border:1px solid var(--border2);
-}
+.stat-card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border:1px solid var(--border2)}
 .stat-num{font-size:32px;font-weight:700;line-height:1;margin-bottom:4px}
 .stat-label{font-size:13px;color:var(--ink3)}
-.stat-badge{
-  display:inline-flex;align-items:center;gap:4px;
-  font-size:11px;font-weight:500;margin-top:8px;
-  padding:2px 8px;border-radius:8px;
-}
+.stat-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;margin-top:8px;padding:2px 8px;border-radius:8px}
 .badge-up{background:var(--green-bg);color:var(--green)}
 .badge-warn{background:var(--amber-bg);color:var(--amber)}
 
-/* ── CARD ── */
-.card{
-  background:var(--white);border-radius:var(--radius);padding:22px;
-  box-shadow:var(--shadow);border:1px solid var(--border2);margin-bottom:18px;
-}
+/* CARD */
+.card{background:var(--white);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);border:1px solid var(--border2);margin-bottom:18px}
 .card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .card-title{font-size:15px;font-weight:600}
-.card-title small{font-size:12px;font-weight:400;color:var(--ink3);margin-left:6px}
 
-/* ── BUTTONS ── */
-.btn{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:9px 18px;border-radius:8px;border:none;
-  font-family:var(--font);font-size:13.5px;font-weight:500;cursor:pointer;transition:all .18s;
-}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;border:none;font-family:var(--font);font-size:13.5px;font-weight:500;cursor:pointer;transition:all .18s}
 .btn-sm{padding:6px 13px;font-size:12.5px}
-.btn-primary{background:var(--ink);color:var(--white)}
-.btn-primary:hover{background:var(--rose)}
-.btn-secondary{background:#F0EDE8;color:var(--ink2)}
-.btn-secondary:hover{background:#E5E0DA}
+.btn-primary{background:var(--ink);color:var(--white)}.btn-primary:hover{background:var(--rose)}
+.btn-secondary{background:#F0EDE8;color:var(--ink2)}.btn-secondary:hover{background:#E5E0DA}
 .btn-success{background:var(--green-bg);color:var(--green);border:1px solid #9FE1CB}
-.btn-danger{background:var(--red-bg);color:var(--red);border:1px solid #F7C1C1}
-.btn-danger:hover{background:#FECACA}
-.btn-line{background:var(--line);color:#fff}
-.btn-line:hover{background:#05b34c}
-.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
-.btn-outline:hover{background:var(--cream2)}
+.btn-danger{background:var(--red-bg);color:var(--red);border:1px solid #F7C1C1}.btn-danger:hover{background:#FECACA}
+.btn-line{background:var(--line);color:#fff}.btn-line:hover{background:#05b34c}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border)}.btn-outline:hover{background:var(--cream2)}
 
-/* ── TABLE ── */
+/* TABLE */
 .table-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
-th{text-align:left;padding:9px 14px;font-size:11.5px;font-weight:600;color:var(--ink3);
-   border-bottom:1.5px solid var(--border);letter-spacing:.03em}
+th{text-align:left;padding:9px 14px;font-size:11.5px;font-weight:600;color:var(--ink3);border-bottom:1.5px solid var(--border);letter-spacing:.03em}
 td{padding:12px 14px;border-bottom:1px solid var(--border2);vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tbody tr:hover td{background:#FAFAF8}
 .td-img{width:44px;height:44px;border-radius:7px;object-fit:cover}
-.td-name{font-weight:500}
-.td-sub{font-size:12px;color:var(--ink3);margin-top:1px}
 
-/* ── BADGE ── */
+/* BADGE */
 .badge{display:inline-block;font-size:11px;font-weight:500;padding:3px 9px;border-radius:7px}
 .badge-green{background:#D1FAE5;color:#065F46}
 .badge-amber{background:#FEF3C7;color:#92400E}
-.badge-red{background:#FEE2E2;color:#991B1B}
 .badge-blue{background:#DBEAFE;color:#1E40AF}
-.badge-purple{background:#EDE9FE;color:#5B21B6}
 .badge-gray{background:#F3F4F6;color:#374151}
+.badge-red{background:#FEE2E2;color:#991B1B}
 
-/* ── FORM ── */
+/* FORM */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-full{grid-column:1/-1}
 .form-group{display:flex;flex-direction:column;gap:5px}
 .form-group label{font-size:12px;font-weight:500;color:var(--ink2)}
-.form-group input,.form-group select,.form-group textarea{
-  padding:10px 13px;border-radius:8px;border:1.5px solid var(--border);
-  font-family:var(--font);font-size:13.5px;color:var(--ink);resize:none;
-  background:var(--cream);transition:border-color .2s;
-}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
-  outline:none;border-color:var(--rose);background:var(--white);
-}
+.form-group input,.form-group select,.form-group textarea{padding:10px 13px;border-radius:8px;border:1.5px solid var(--border);font-family:var(--font);font-size:13.5px;color:var(--ink);resize:none;background:var(--cream);transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--rose);background:var(--white)}
+.form-actions{display:flex;gap:10px;margin-top:18px}
 
-/* ── UPLOAD ── */
-.upload-zone{
-  border:2px dashed var(--border);border-radius:var(--radius);
-  padding:32px;text-align:center;cursor:pointer;transition:all .2s;background:var(--cream);
-}
-.upload-zone:hover{border-color:var(--rose);background:var(--rose-bg)}
-.upload-zone-icon{font-size:28px;margin-bottom:8px}
+/* UPLOAD */
+.upload-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:28px;text-align:center;cursor:pointer;transition:all .2s;background:var(--cream)}
+.upload-zone:hover,.upload-zone.drag{border-color:var(--rose);background:var(--rose-bg)}
+.upload-zone-icon{font-size:26px;margin-bottom:8px}
 .upload-zone-text{font-size:13.5px;color:var(--ink3);margin-bottom:3px}
 .upload-zone-hint{font-size:12px;color:var(--light)}
 .preview-grid{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.preview-item{position:relative;width:76px;height:76px;border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+.preview-item{position:relative;width:80px;height:80px;border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
 .preview-item img{width:100%;height:100%;object-fit:cover}
-.preview-rm{
-  position:absolute;top:3px;right:3px;width:18px;height:18px;
-  background:rgba(28,25,23,.75);color:#fff;border:none;border-radius:50%;
-  font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;
-}
-.form-actions{display:flex;gap:10px;margin-top:18px}
+.preview-item .preview-rm{position:absolute;top:3px;right:3px;width:18px;height:18px;background:rgba(28,25,23,.75);color:#fff;border:none;border-radius:50%;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.upload-uploading{position:absolute;inset:0;background:rgba(28,25,23,.5);display:flex;align-items:center;justify-content:center}
+.upload-spinner{width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
 
-/* ── PROGRESS BAR ── */
+/* PROGRESS */
 .progress-wrap{margin-top:10px}
 .progress-label{font-size:12px;color:var(--ink3);margin-bottom:5px}
 .progress-bar-bg{background:var(--cream2);border-radius:4px;height:6px;overflow:hidden}
 .progress-bar-fill{height:100%;background:var(--rose);border-radius:4px;transition:width .3s;width:0%}
 
-/* ── SETTINGS SECTION ── */
-.settings-section{margin-bottom:24px}
-.settings-section-title{font-size:14px;font-weight:600;margin-bottom:4px}
-.settings-section-desc{font-size:12.5px;color:var(--ink3);margin-bottom:16px}
-.env-table{width:100%;border-collapse:collapse;font-size:13px}
-.env-table td{padding:8px 12px;border-bottom:1px solid var(--border2)}
-.env-table tr:last-child td{border-bottom:none}
-.env-key{font-weight:500;color:var(--ink);width:220px;font-family:monospace;font-size:12.5px}
-.env-val{color:var(--ink3)}
-.env-status{text-align:right}
-
-/* ── EMPTY STATE ── */
-.empty-state{text-align:center;padding:48px 24px;color:var(--ink3)}
-.empty-state-icon{font-size:36px;margin-bottom:12px}
-.empty-state h3{font-size:15px;font-weight:600;color:var(--ink2);margin-bottom:6px}
-.empty-state p{font-size:13px}
-
-/* ── TOAST ── */
-.toast{
-  position:fixed;bottom:24px;right:24px;z-index:9999;
-  background:var(--ink);color:#fff;padding:12px 20px;border-radius:8px;
-  font-size:13.5px;transform:translateY(20px);opacity:0;
-  transition:all .25s;pointer-events:none;box-shadow:var(--shadow-lg);
-}
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--ink);color:#fff;padding:12px 20px;border-radius:8px;font-size:13.5px;transform:translateY(20px);opacity:0;transition:all .25s;pointer-events:none;box-shadow:var(--shadow-lg)}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.ok{border-left:3px solid var(--line)}
 .toast.err{border-left:3px solid var(--red)}
 
-/* ── MODAL ── */
-.modal-overlay{
-  position:fixed;inset:0;z-index:500;background:rgba(28,25,23,.5);
-  backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;
-}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(28,25,23,.5);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
-.modal{background:var(--white);border-radius:14px;padding:28px;width:560px;max-width:90vw;max-height:88vh;overflow-y:auto;box-shadow:var(--shadow-lg)}
+.modal{background:var(--white);border-radius:14px;padding:28px;width:640px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg)}
 .modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
 .modal-title{font-size:16px;font-weight:600}
 .modal-close{background:none;border:none;color:var(--ink3);font-size:20px;cursor:pointer;padding:2px 6px}
-.modal-close:hover{color:var(--ink)}
 
-/* ── INQUIRY DETAIL ── */
+/* SETTINGS */
+.settings-section-desc{font-size:12.5px;color:var(--ink3);margin-bottom:16px}
+.env-table{width:100%;border-collapse:collapse;font-size:13px}
+.env-table td{padding:8px 12px;border-bottom:1px solid var(--border2)}
+.env-table tr:last-child td{border-bottom:none}
+.env-key{font-weight:500;color:var(--ink);width:240px;font-family:monospace;font-size:12px}
+.env-val{color:var(--ink3)}
+.env-status{text-align:right}
+
+/* INQ */
 .inq-detail{display:flex;flex-direction:column;gap:14px}
 .inq-row{display:flex;gap:8px}
 .inq-row label{font-size:12px;font-weight:500;color:var(--ink3);width:80px;flex-shrink:0;padding-top:1px}
 .inq-row span{font-size:14px;color:var(--ink)}
 
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .stats-row{grid-template-columns:1fr 1fr}
-  .form-grid{grid-template-columns:1fr}
-}
+/* LOADING */
+.loading-row td{text-align:center;color:var(--ink3);padding:40px}
+.inline-spin{display:inline-block;width:16px;height:16px;border:2px solid var(--border);border-top-color:var(--rose);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:900px){.stats-row{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}}
 @media(max-width:640px){
   body{flex-direction:column}
-  .sidebar{width:100%;min-height:auto;height:auto;flex-direction:row;flex-wrap:wrap;padding:12px}
-  .sidebar-logo{padding:8px 12px;border-bottom:none;border-right:1px solid rgba(255,255,255,.07)}
-  .sidebar-nav{display:flex;padding:4px}
+  .sidebar{width:100%;min-height:auto;height:auto;position:relative}
+  .sidebar-nav{display:flex;padding:4px;overflow-x:auto}
   .nav-group-label{display:none}
-  .nav-btn{padding:8px 12px;border-left:none;border-bottom:3px solid transparent;font-size:12px}
+  .nav-btn{padding:8px 12px;border-left:none;border-bottom:3px solid transparent;font-size:12px;white-space:nowrap}
   .sidebar-footer{display:none}
   .main{padding:16px}
-  .stats-row{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ── LOGIN ── -->
+<!-- LOGIN -->
 <div id="login-wrap">
   <div class="login-card">
     <div class="login-brand">
@@ -284,44 +190,24 @@ tbody tr:hover td{background:#FAFAF8}
       <label>管理密碼</label>
       <input type="password" id="pw" placeholder="••••••••" autofocus>
     </div>
-    <p class="login-hint">展示版密碼：<span>zxq0815</span></p>
     <button class="btn-login" onclick="doLogin()">進入後台</button>
     <div class="login-err" id="login-err">密碼錯誤，請再試一次</div>
   </div>
 </div>
 
-<!-- ── SIDEBAR ── -->
+<!-- SIDEBAR -->
 <div class="sidebar">
-  <div class="sidebar-logo">小仙女<em style="color:var(--rose);font-style:normal">醫美</em></div>
+  <div class="sidebar-logo">小仙女<em>醫美</em></div>
   <nav class="sidebar-nav">
     <div class="nav-group-label">主要功能</div>
-    <button class="nav-btn active" data-p="dashboard">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-      總覽
-    </button>
-    <button class="nav-btn" data-p="cases">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/><path d="M4 10h16"/><path d="M10 4v16"/></svg>
-      成果案例
-    </button>
-    <button class="nav-btn" data-p="videos">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="15" height="12" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg>
-      影片管理
-    </button>
-    <button class="nav-btn" data-p="faq">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
-      常見問答
-    </button>
-    <div class="nav-group-label">客戶管理</div>
-    <button class="nav-btn" data-p="inquiries">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>
-      諮詢記錄
-      <span id="inq-badge" style="margin-left:auto;background:var(--rose);color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;display:none"></span>
-    </button>
+    <button class="nav-btn active" data-p="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>總覽</button>
+    <button class="nav-btn" data-p="cases"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>成果案例</button>
+    <button class="nav-btn" data-p="videos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="15" height="12" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg>影片管理</button>
+    <button class="nav-btn" data-p="faq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>常見問答</button>
+    <div class="nav-group-label">客戶</div>
+    <button class="nav-btn" data-p="inquiries"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>諮詢記錄<span id="inq-badge" style="margin-left:auto;background:var(--rose);color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;display:none"></span></button>
     <div class="nav-group-label">系統</div>
-    <button class="nav-btn" data-p="settings">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-      系統設定
-    </button>
+    <button class="nav-btn" data-p="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>系統設定</button>
   </nav>
   <div class="sidebar-footer">
     <div class="sidebar-user"><strong>管理員</strong>已登入</div>
@@ -329,79 +215,40 @@ tbody tr:hover td{background:#FAFAF8}
   </div>
 </div>
 
-<!-- ── MAIN ── -->
+<!-- MAIN -->
 <div class="main">
 
   <!-- DASHBOARD -->
   <div class="panel active" id="p-dashboard">
     <div class="topbar">
-      <div class="page-title">總覽 <small>歡迎回來！</small></div>
-      <div class="topbar-actions">
-        <a href="index.html" target="_blank" class="btn btn-outline btn-sm">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-          查看前台
-        </a>
-      </div>
+      <div class="page-title">總覽</div>
+      <a href="/" target="_blank" class="btn btn-outline btn-sm">查看前台 ↗</a>
     </div>
     <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-num" style="color:var(--blue)" id="s-cases">6</div>
-        <div class="stat-label">成果案例</div>
-        <span class="stat-badge badge-up">↑ 本月 +2</span>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num" style="color:var(--purple)" id="s-videos">3</div>
-        <div class="stat-label">影片</div>
-        <span class="stat-badge badge-up">↑ 本月 +1</span>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num" style="color:var(--rose)" id="s-inq">5</div>
-        <div class="stat-label">諮詢申請</div>
-        <span class="stat-badge badge-warn">⚠ 3 待回覆</span>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num" style="color:var(--green)" id="s-faq">6</div>
-        <div class="stat-label">FAQ 數量</div>
-        <span class="stat-badge badge-up">已設定完成</span>
-      </div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--blue)" id="s-cases">—</div><div class="stat-label">成果案例</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--rose)" id="s-inq">—</div><div class="stat-label">待回覆諮詢</div><span class="stat-badge badge-warn">需要處理</span></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--green)" id="s-published">—</div><div class="stat-label">已發布案例</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--amber)" id="s-draft">—</div><div class="stat-label">草稿案例</div></div>
     </div>
     <div class="card">
-      <div class="card-head">
-        <div class="card-title">最新諮詢申請 <small>最近 5 筆</small></div>
-        <button class="btn btn-secondary btn-sm" onclick="go('inquiries')">查看全部</button>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>時間</th><th>姓名</th><th>想了解</th><th>狀態</th></tr></thead>
-          <tbody id="dash-inq"></tbody>
-        </table>
-      </div>
+      <div class="card-head"><div class="card-title">最新諮詢</div><button class="btn btn-secondary btn-sm" onclick="go('inquiries')">查看全部</button></div>
+      <div class="table-wrap"><table><thead><tr><th>時間</th><th>姓名</th><th>項目</th><th>狀態</th></tr></thead><tbody id="dash-inq-tbody"><tr class="loading-row"><td colspan="4"><span class="inline-spin"></span>載入中…</td></tr></tbody></table></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
       <div class="card">
-        <div class="card-head"><div class="card-title">LINE 帳號狀態</div></div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--ink3)">Webhook 狀態</span><span class="badge badge-amber">待設定</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--ink3)">關鍵字自動回覆</span><span class="badge badge-green">5 組已設定</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--ink3)">本月推播次數</span><span style="font-weight:500">12 / 200 則</span></div>
-        </div>
-        <button class="btn btn-line btn-sm" style="margin-top:16px;width:100%;justify-content:center" onclick="go('settings')">設定 LINE</button>
-      </div>
-      <div class="card">
         <div class="card-head"><div class="card-title">快速操作</div></div>
         <div style="display:flex;flex-direction:column;gap:8px">
-          <button class="btn btn-primary btn-sm" style="justify-content:flex-start" onclick="go('cases')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            新增成果案例
-          </button>
-          <button class="btn btn-secondary btn-sm" style="justify-content:flex-start" onclick="go('videos')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            上傳影片
-          </button>
-          <button class="btn btn-secondary btn-sm" style="justify-content:flex-start" onclick="go('faq')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            編輯 FAQ
-          </button>
+          <button class="btn btn-primary btn-sm" style="justify-content:flex-start" onclick="go('cases');setTimeout(()=>openAddCase(),100)">+ 新增成果案例</button>
+          <button class="btn btn-secondary btn-sm" style="justify-content:flex-start" onclick="go('faq')">編輯常見問答</button>
+          <button class="btn btn-secondary btn-sm" style="justify-content:flex-start" onclick="go('inquiries')">查看諮詢記錄</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title">LINE 狀態</div></div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--ink3)">LINE 連結</span><span id="line-url-status" class="badge badge-gray">未設定</span></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--ink3)">Cloudinary</span><span class="badge badge-green">已設定</span></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--ink3)">Airtable</span><span class="badge badge-green">已連接</span></div>
         </div>
       </div>
     </div>
@@ -410,17 +257,14 @@ tbody tr:hover td{background:#FAFAF8}
   <!-- CASES -->
   <div class="panel" id="p-cases">
     <div class="topbar">
-      <div class="page-title">成果案例</div>
-      <button class="btn btn-primary btn-sm" onclick="openAddCase()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        新增案例
-      </button>
+      <div class="page-title">成果案例管理</div>
+      <button class="btn btn-primary btn-sm" onclick="openAddCase()">+ 新增案例</button>
     </div>
     <div class="card">
       <div class="table-wrap">
         <table>
-          <thead><tr><th>案例</th><th>類別</th><th>狀態</th><th>建立時間</th><th>操作</th></tr></thead>
-          <tbody id="cases-tbody"></tbody>
+          <thead><tr><th>縮圖</th><th>案例資訊</th><th>類別</th><th>狀態</th><th>建立時間</th><th>操作</th></tr></thead>
+          <tbody id="cases-tbody"><tr class="loading-row"><td colspan="6"><span class="inline-spin"></span>載入中…</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -430,16 +274,13 @@ tbody tr:hover td{background:#FAFAF8}
   <div class="panel" id="p-videos">
     <div class="topbar">
       <div class="page-title">影片管理</div>
-      <button class="btn btn-primary btn-sm" onclick="openAddVideo()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        上傳影片
-      </button>
+      <button class="btn btn-primary btn-sm" onclick="openAddVideo()">+ 上傳影片</button>
     </div>
     <div class="card">
       <div class="table-wrap">
         <table>
           <thead><tr><th>縮圖</th><th>標題</th><th>狀態</th><th>建立時間</th><th>操作</th></tr></thead>
-          <tbody id="videos-tbody"></tbody>
+          <tbody id="videos-tbody"><tr class="loading-row"><td colspan="5"><span class="inline-spin"></span>載入中…</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -450,29 +291,24 @@ tbody tr:hover td{background:#FAFAF8}
     <div class="topbar">
       <div class="page-title">常見問答</div>
       <div class="topbar-actions">
-        <button class="btn btn-primary btn-sm" onclick="addFAQ()">+ 新增問題</button>
-        <button class="btn btn-success btn-sm" onclick="saveFAQ()">儲存</button>
+        <button class="btn btn-secondary btn-sm" onclick="addFAQ()">+ 新增問題</button>
+        <button class="btn btn-primary btn-sm" onclick="saveFAQ()">儲存</button>
       </div>
     </div>
-    <div class="card">
-      <div id="faq-editor"></div>
-    </div>
+    <div class="card"><div id="faq-editor"><div style="text-align:center;padding:40px;color:var(--ink3)"><span class="inline-spin"></span>載入中…</div></div></div>
   </div>
 
   <!-- INQUIRIES -->
   <div class="panel" id="p-inquiries">
     <div class="topbar">
       <div class="page-title">諮詢申請記錄</div>
-      <button class="btn btn-outline btn-sm" onclick="exportCSV()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        匯出 CSV
-      </button>
+      <button class="btn btn-outline btn-sm" onclick="exportCSV()">匯出 CSV</button>
     </div>
     <div class="card">
       <div class="table-wrap">
         <table>
-          <thead><tr><th>時間</th><th>姓名</th><th>聯絡方式</th><th>想了解</th><th>訊息</th><th>狀態</th><th>操作</th></tr></thead>
-          <tbody id="inq-tbody"></tbody>
+          <thead><tr><th>時間</th><th>姓名</th><th>聯絡方式</th><th>想了解</th><th>留言</th><th>狀態</th><th>操作</th></tr></thead>
+          <tbody id="inq-tbody"><tr class="loading-row"><td colspan="7"><span class="inline-spin"></span>載入中…</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -481,101 +317,97 @@ tbody tr:hover td{background:#FAFAF8}
   <!-- SETTINGS -->
   <div class="panel" id="p-settings">
     <div class="topbar"><div class="page-title">系統設定</div></div>
-
     <div class="card">
-      <div class="card-head"><div class="card-title">LINE 官方帳號設定</div></div>
-      <div class="settings-section">
-        <div class="settings-section-title">基本連結</div>
-        <div class="settings-section-desc">設定後前台的「加 LINE」按鈕和浮動按鈕會自動更新</div>
-        <div class="form-grid">
-          <div class="form-group form-full"><label>LINE 官方帳號連結</label><input id="s-line-url" placeholder="https://line.me/ti/p/YOUR_ID" value="https://line.me/ti/p/YOUR_LINE_ID"></div>
-          <div class="form-group"><label>Channel Access Token</label><input id="s-line-token" type="password" placeholder="從 LINE Developers 取得"></div>
-          <div class="form-group"><label>Channel Secret</label><input id="s-line-secret" type="password" placeholder="從 LINE Developers 取得"></div>
-          <div class="form-group"><label>管理員 LINE User ID</label><input id="s-admin-uid" placeholder="接收諮詢通知用"></div>
-        </div>
-        <div class="form-actions"><button class="btn btn-line" onclick="toast('LINE 設定已儲存 ✓','ok')">儲存 LINE 設定</button></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-head"><div class="card-title">圖片影片儲存（Cloudinary）</div></div>
-      <div class="settings-section-desc" style="margin-bottom:14px">免費方案含 25GB 儲存空間，足夠輕量使用。前往 <a href="https://cloudinary.com" target="_blank" style="color:var(--blue)">cloudinary.com</a> 免費申請。</div>
+      <div class="card-head"><div class="card-title">LINE 官方帳號</div></div>
       <div class="form-grid">
-        <div class="form-group"><label>Cloud Name</label><input id="s-cloud" placeholder="your_cloud_name"></div>
-        <div class="form-group"><label>Upload Preset（Unsigned）</label><input id="s-preset" placeholder="unsigned_preset_name"></div>
+        <div class="form-group form-full"><label>LINE 加入好友連結</label><input id="s-line-url" placeholder="https://line.me/ti/p/YOUR_ID"></div>
       </div>
-      <div class="form-actions"><button class="btn btn-primary" onclick="toast('Cloudinary 設定已儲存 ✓','ok')">儲存</button></div>
+      <div class="form-actions"><button class="btn btn-line" onclick="saveLineUrl()">儲存 LINE 設定</button></div>
     </div>
-
     <div class="card">
       <div class="card-head"><div class="card-title">後台密碼修改</div></div>
       <div class="form-grid">
         <div class="form-group"><label>新密碼</label><input type="password" id="s-pw1" placeholder="至少 6 位"></div>
-        <div class="form-group"><label>確認新密碼</label><input type="password" id="s-pw2" placeholder="再輸入一次"></div>
+        <div class="form-group"><label>確認密碼</label><input type="password" id="s-pw2" placeholder="再輸入一次"></div>
       </div>
-      <div class="form-actions">
-        <button class="btn btn-primary" onclick="changePW()">更新密碼</button>
-      </div>
+      <div class="form-actions"><button class="btn btn-primary" onclick="changePW()">更新密碼</button></div>
     </div>
-
     <div class="card">
-      <div class="card-head"><div class="card-title">環境變數清單（Vercel 部署用）</div></div>
-      <div class="settings-section-desc" style="margin-bottom:14px">部署到 Vercel 時需在 Dashboard → Settings → Environment Variables 設定以下變數</div>
+      <div class="card-head"><div class="card-title">Vercel 環境變數（部署必填）</div></div>
+      <div class="settings-section-desc">在 Vercel → 專案 → Settings → Environment Variables 設定</div>
       <table class="env-table">
-        <tr><td class="env-key">ADMIN_PASSWORD</td><td class="env-val">後台登入密碼</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">JWT_SECRET</td><td class="env-val">隨機安全字串（任意輸入）</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">LINE_TOKEN</td><td class="env-val">LINE Channel Access Token</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">LINE_SECRET</td><td class="env-val">LINE Channel Secret</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">LINE_URL</td><td class="env-val">LINE 官方帳號加入連結</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">LINE_ADMIN_USER_ID</td><td class="env-val">管理員 LINE User ID（接收通知）</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">GOOGLE_SHEET_ID</td><td class="env-val">Google Sheets 的 ID</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">GOOGLE_SERVICE_ACCOUNT_EMAIL</td><td class="env-val">Google 服務帳號 Email</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">GOOGLE_PRIVATE_KEY</td><td class="env-val">Google 服務帳號私鑰</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">CLOUDINARY_CLOUD_NAME</td><td class="env-val">Cloudinary Cloud Name</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
-        <tr><td class="env-key">CLOUDINARY_UPLOAD_PRESET</td><td class="env-val">Cloudinary Upload Preset</td><td class="env-status"><span class="badge badge-amber">待設定</span></td></tr>
+        <tr><td class="env-key">ADMIN_PASSWORD</td><td class="env-val">後台登入密碼</td><td class="env-status"><span class="badge badge-green">必填</span></td></tr>
+        <tr><td class="env-key">AIRTABLE_TOKEN</td><td class="env-val">Airtable Personal Access Token</td><td class="env-status"><span class="badge badge-green">必填</span></td></tr>
+        <tr><td class="env-key">AIRTABLE_BASE_ID</td><td class="env-val">appZCAwqYkJLx92me</td><td class="env-status"><span class="badge badge-green">已知</span></td></tr>
+        <tr><td class="env-key">AIRTABLE_TABLE_ID</td><td class="env-val">Cases 表格 ID</td><td class="env-status"><span class="badge badge-green">必填</span></td></tr>
+        <tr><td class="env-key">AIRTABLE_INQ_TABLE</td><td class="env-val">Inquiries 表格 ID</td><td class="env-status"><span class="badge badge-green">必填</span></td></tr>
+        <tr><td class="env-key">CLOUDINARY_CLOUD_NAME</td><td class="env-val">dicnnzmkp</td><td class="env-status"><span class="badge badge-green">已知</span></td></tr>
+        <tr><td class="env-key">CLOUDINARY_UPLOAD_PRESET</td><td class="env-val">edm25pcf</td><td class="env-status"><span class="badge badge-green">已知</span></td></tr>
+        <tr><td class="env-key">LINE_TOKEN</td><td class="env-val">LINE Channel Access Token（選填）</td><td class="env-status"><span class="badge badge-gray">選填</span></td></tr>
+        <tr><td class="env-key">LINE_ADMIN_USER_ID</td><td class="env-val">管理員 LINE User ID（選填）</td><td class="env-status"><span class="badge badge-gray">選填</span></td></tr>
       </table>
     </div>
   </div>
 </div>
 
-<!-- ── MODALS ── -->
+<!-- MODAL: 新增/編輯案例 -->
 <div class="modal-overlay" id="m-case">
   <div class="modal">
-    <div class="modal-head"><div class="modal-title">新增成果案例</div><button class="modal-close" onclick="closeModal('m-case')">×</button></div>
+    <div class="modal-head">
+      <div class="modal-title" id="m-case-title">新增成果案例</div>
+      <button class="modal-close" onclick="closeModal('m-case')">×</button>
+    </div>
     <div class="form-grid">
-      <div class="form-group"><label>案例標題</label><input id="c-title" placeholder="例：隆鼻案例 #007"></div>
-      <div class="form-group"><label>手術類別</label>
-        <select id="c-cat"><option value="nose">隆鼻</option><option value="eyes">雙眼皮</option><option value="face">輪廓整形</option><option value="filler">填充</option></select>
+      <input type="hidden" id="c-id">
+      <div class="form-group"><label>案例標題 *</label><input id="c-title" placeholder="例：隆鼻案例 #007"></div>
+      <div class="form-group"><label>手術類別 *</label>
+        <select id="c-cat">
+          <option value="nose">隆鼻</option>
+          <option value="eyes">雙眼皮</option>
+          <option value="face">輪廓整形</option>
+          <option value="filler">填充</option>
+          <option value="breast">豐胸</option>
+          <option value="body">體雕</option>
+        </select>
       </div>
-      <div class="form-group form-full"><label>說明</label><textarea id="c-desc" rows="2" placeholder="術後第幾天，效果如何…"></textarea></div>
+      <div class="form-group form-full"><label>案例說明</label><textarea id="c-desc" rows="2" placeholder="術後第幾天，效果如何，客戶感受…"></textarea></div>
+      <div class="form-group"><label>合作醫院</label><input id="c-hospital" placeholder="例：上海某某醫療美容醫院"></div>
+      <div class="form-group"><label>主治醫師</label><input id="c-doctor" placeholder="例：張醫師"></div>
+      <div class="form-group"><label>恢復天數</label><input id="c-recovery" placeholder="例：14 天消腫"></div>
+      <div class="form-group"><label>費用範圍（NT$）</label><input id="c-price" placeholder="例：6–10 萬"></div>
       <div class="form-group form-full">
-        <label>術前照片</label>
-        <div class="upload-zone" onclick="document.getElementById('c-before').click()">
+        <label>術前照片（可多張）</label>
+        <div class="upload-zone" id="before-zone" onclick="document.getElementById('c-before').click()" ondragover="dragOver(event,'before-zone')" ondragleave="dragLeave('before-zone')" ondrop="dropFiles(event,'c-before','before-prev')">
           <div class="upload-zone-icon">📷</div>
-          <div class="upload-zone-text">點擊上傳術前照片</div>
-          <div class="upload-zone-hint">JPG / PNG，最大 5MB</div>
+          <div class="upload-zone-text">點擊或拖曳上傳術前照片</div>
+          <div class="upload-zone-hint">JPG / PNG / WEBP，最大 10MB/張</div>
         </div>
-        <input type="file" id="c-before" style="display:none" accept="image/*" onchange="previewImg(this,'prev-before')">
-        <div class="preview-grid" id="prev-before"></div>
+        <input type="file" id="c-before" style="display:none" accept="image/*" multiple onchange="handleImgUpload(this,'before-prev','before')">
+        <div class="preview-grid" id="before-prev"></div>
       </div>
       <div class="form-group form-full">
-        <label>術後照片</label>
-        <div class="upload-zone" onclick="document.getElementById('c-after').click()">
+        <label>術後照片（可多張）</label>
+        <div class="upload-zone" id="after-zone" onclick="document.getElementById('c-after').click()" ondragover="dragOver(event,'after-zone')" ondragleave="dragLeave('after-zone')" ondrop="dropFiles(event,'c-after','after-prev')">
           <div class="upload-zone-icon">✨</div>
-          <div class="upload-zone-text">點擊上傳術後照片</div>
-          <div class="upload-zone-hint">JPG / PNG，最大 5MB</div>
+          <div class="upload-zone-text">點擊或拖曳上傳術後照片</div>
+          <div class="upload-zone-hint">JPG / PNG / WEBP，最大 10MB/張</div>
         </div>
-        <input type="file" id="c-after" style="display:none" accept="image/*" onchange="previewImg(this,'prev-after')">
-        <div class="preview-grid" id="prev-after"></div>
+        <input type="file" id="c-after" style="display:none" accept="image/*" multiple onchange="handleImgUpload(this,'after-prev','after')">
+        <div class="preview-grid" id="after-prev"></div>
       </div>
     </div>
+    <div id="case-save-progress" style="display:none;margin-top:12px">
+      <div class="progress-label" id="case-save-label">儲存中…</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="case-save-bar"></div></div>
+    </div>
     <div class="form-actions">
-      <button class="btn btn-primary" onclick="saveCase()">儲存案例</button>
+      <button class="btn btn-primary" id="case-save-btn" onclick="saveCase()">儲存案例</button>
       <button class="btn btn-secondary" onclick="closeModal('m-case')">取消</button>
     </div>
   </div>
 </div>
 
+<!-- MODAL: 上傳影片 -->
 <div class="modal-overlay" id="m-video">
   <div class="modal">
     <div class="modal-head"><div class="modal-title">上傳影片</div><button class="modal-close" onclick="closeModal('m-video')">×</button></div>
@@ -593,19 +425,17 @@ tbody tr:hover td{background:#FAFAF8}
       </div>
       <div class="form-group form-full">
         <label>封面縮圖（選填）</label>
-        <div class="upload-zone" onclick="document.getElementById('v-thumb').click()">
+        <div class="upload-zone" onclick="document.getElementById('v-thumb-file').click()">
           <div class="upload-zone-icon">🖼️</div>
           <div class="upload-zone-text">上傳封面圖</div>
         </div>
-        <input type="file" id="v-thumb" style="display:none" accept="image/*" onchange="previewImg(this,'prev-thumb')">
-        <div class="preview-grid" id="prev-thumb"></div>
+        <input type="file" id="v-thumb-file" style="display:none" accept="image/*" onchange="handleImgUpload(this,'v-thumb-prev','vthumb')">
+        <div class="preview-grid" id="v-thumb-prev"></div>
       </div>
     </div>
-    <div id="upload-prog" style="display:none">
-      <div class="progress-wrap">
-        <div class="progress-label">上傳中，請稍候…</div>
-        <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-fill"></div></div>
-      </div>
+    <div id="video-upload-prog" style="display:none;margin-top:12px">
+      <div class="progress-label">上傳中，請稍候…</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="video-prog-fill"></div></div>
     </div>
     <div class="form-actions">
       <button class="btn btn-primary" onclick="saveVideo()">上傳影片</button>
@@ -614,6 +444,7 @@ tbody tr:hover td{background:#FAFAF8}
   </div>
 </div>
 
+<!-- MODAL: 諮詢詳情 -->
 <div class="modal-overlay" id="m-inq">
   <div class="modal" style="width:480px">
     <div class="modal-head"><div class="modal-title">諮詢詳情</div><button class="modal-close" onclick="closeModal('m-inq')">×</button></div>
@@ -628,304 +459,573 @@ tbody tr:hover td{background:#FAFAF8}
 <div class="toast" id="toast"></div>
 
 <script>
-// ── Mock Data ──
-let CASES = [
-  {id:1,title:'隆鼻案例 #001',cat:'nose',desc:'術後第 30 天，完全自然',published:true,date:'4月1日'},
-  {id:2,title:'雙眼皮案例 #002',cat:'eyes',desc:'術後第 14 天消腫',published:true,date:'3月28日'},
-  {id:3,title:'輪廓案例 #003',cat:'face',desc:'術後第 60 天',published:false,date:'3月20日'},
-  {id:4,title:'填充案例 #004',cat:'filler',desc:'玻尿酸術後即效',published:true,date:'3月15日'},
-  {id:5,title:'隆鼻案例 #005',cat:'nose',desc:'術後第 45 天',published:true,date:'3月10日'},
-  {id:6,title:'雙眼皮案例 #006',cat:'eyes',desc:'術後第 21 天',published:false,date:'3月5日'},
-];
+// ── Config ──
+const CLOUDINARY_CLOUD = 'dicnnzmkp';
+const CLOUDINARY_PRESET = 'edm25pcf';
+const API = '/api';
+const ADMIN_PW = 'zxq0815';
 
-let VIDEOS = [
-  {id:1,title:'隆鼻術後第 7 天分享',desc:'第一週腫脹狀況',published:true,date:'4月2日',thumb:'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=80&h=80&fit=crop'},
-  {id:2,title:'雙眼皮術後恢復日記',desc:'第 1–30 天完整紀錄',published:true,date:'3月25日',thumb:'https://images.unsplash.com/photo-1541216970279-affbfdd55aa8?w=80&h=80&fit=crop'},
-  {id:3,title:'上海醫院環境實拍',desc:'帶你看看合作醫院',published:false,date:'3月18日',thumb:'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=80&h=80&fit=crop'},
-];
-
-let FAQ_DATA = [
-  {q:'去上海整形安全嗎？',a:'合作醫院均在上海衛健委登記，可官網查詢。帶超過 50 位姐妹，術後持續追蹤。'},
-  {q:'需要在上海待幾天？',a:'一般手術建議 4–5 天，輪廓等大型手術建議 7 天。'},
-  {q:'費用大概是多少？',a:'雙眼皮約 NT$3–8 萬，隆鼻約 NT$6–15 萬，輪廓約 NT$15–40 萬。'},
-  {q:'你收諮詢費嗎？',a:'LINE 私訊基礎諮詢完全免費，不限次數。'},
-  {q:'回台後有問題怎麼辦？',a:'術後 7、14、30 天主動追蹤，共追蹤 60 天，有狀況立即聯繫醫師。'},
-  {q:'術後照片可以看到真實臉嗎？',a:'均已獲客戶授權，部分照片會局部保護隱私，私訊可看更多。'},
-];
-
-let INQUIRIES = [
-  {id:1,name:'小雨',contact:'@xiao_yu_tw',item:'nose',msg:'想了解隆鼻的恢復期',status:'new',date:'4月3日 14:22'},
-  {id:2,name:'Mandy',contact:'0912-345-678',item:'eyes',msg:'雙眼皮大概多少費用？',status:'replied',date:'4月2日 09:15'},
-  {id:3,name:'芸',contact:'@yun_beauty',item:'face',msg:'想了解輪廓整形，可以視訊諮詢嗎',status:'new',date:'4月1日 21:44'},
-  {id:4,name:'Joy',contact:'@joy_tw',item:'filler',msg:'玻尿酸填充在上海做和台灣有差嗎',status:'new',date:'3月30日 16:08'},
-  {id:5,name:'Lisa',contact:'0987-654-321',item:'other',msg:'想了解整個流程和費用',status:'replied',date:'3月28日 11:30'},
-];
-
+// ── State ──
+let CASES = [], VIDEOS = [], FAQ_DATA = [], INQUIRIES = [];
+let uploadedImages = { before: [], after: [], vthumb: [] };
 let activeInqId = null;
+let editingCaseId = null;
 
 // ── Auth ──
-function doLogin(){
+function doLogin() {
   const pw = document.getElementById('pw').value;
-  if(pw === 'zxq0815' || pw === 'admin'){
+  if (pw === ADMIN_PW) {
     document.getElementById('login-wrap').style.display = 'none';
     initAdmin();
   } else {
-    document.getElementById('login-err').style.display = 'block';
-    setTimeout(()=>document.getElementById('login-err').style.display='none', 2000);
+    const err = document.getElementById('login-err');
+    err.style.display = 'block';
+    setTimeout(() => err.style.display = 'none', 2000);
   }
 }
-document.getElementById('pw').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
+document.getElementById('pw').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
 
-function logout(){
+function logout() {
   document.getElementById('login-wrap').style.display = 'flex';
   document.getElementById('pw').value = '';
 }
 
 // ── Nav ──
-function go(p){
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(el=>el.classList.remove('active'));
+function go(p) {
+  document.querySelectorAll('.nav-btn[data-p]').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(el => el.classList.remove('active'));
   document.querySelector(`[data-p="${p}"]`).classList.add('active');
-  document.getElementById('p-'+p).classList.add('active');
+  document.getElementById(`p-${p}`).classList.add('active');
 }
-document.querySelectorAll('.nav-btn[data-p]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.p)));
+document.querySelectorAll('.nav-btn[data-p]').forEach(b => b.addEventListener('click', () => go(b.dataset.p)));
 
 // ── Toast ──
-function toast(msg, type='ok'){
+function toast(msg, type = 'ok') {
   const t = document.getElementById('toast');
-  t.textContent = msg; t.className = `toast ${type} show`;
-  setTimeout(()=>t.classList.remove('show'), 2800);
+  t.textContent = msg;
+  t.className = `toast ${type} show`;
+  setTimeout(() => t.classList.remove('show'), 3000);
 }
 
 // ── Init ──
-function initAdmin(){
-  renderCases(); renderVideos(); renderFAQ(); renderInquiries(); renderDashInq();
-  const newCount = INQUIRIES.filter(i=>i.status==='new').length;
-  const badge = document.getElementById('inq-badge');
-  if(newCount){ badge.textContent = newCount; badge.style.display='inline'; }
-  document.getElementById('s-inq').textContent = newCount;
+async function initAdmin() {
+  await Promise.all([loadCases(), loadInquiries(), loadFAQAdmin(), loadVideos()]);
+  updateDashStats();
 }
 
-// ── Cases ──
-const catMap = {nose:'隆鼻',eyes:'雙眼皮',face:'輪廓整形',filler:'填充'};
-function renderCases(){
-  document.getElementById('cases-tbody').innerHTML = CASES.map(c=>`
-    <tr>
-      <td>
-        <div style="font-weight:500">${c.title}</div>
-        <div style="font-size:12px;color:var(--ink3)">${c.desc}</div>
-      </td>
-      <td><span class="badge badge-blue">${catMap[c.cat]||c.cat}</span></td>
-      <td><span class="badge ${c.published?'badge-green':'badge-gray'}">${c.published?'已發布':'草稿'}</span></td>
-      <td style="color:var(--ink3);font-size:13px">${c.date}</td>
-      <td>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-secondary btn-sm" onclick="toggleCase(${c.id})">${c.published?'下架':'發布'}</button>
-          <button class="btn btn-danger btn-sm" onclick="deleteCase(${c.id})">刪除</button>
-        </div>
-      </td>
-    </tr>`).join('');
-}
-function openAddCase(){ document.getElementById('m-case').classList.add('open'); }
-function saveCase(){
-  const title = document.getElementById('c-title').value || '新案例';
-  const cat = document.getElementById('c-cat').value;
-  const desc = document.getElementById('c-desc').value;
-  CASES.unshift({id:Date.now(),title,cat,desc,published:false,date:'今天'});
-  renderCases();
-  document.getElementById('s-cases').textContent = CASES.length;
-  closeModal('m-case');
-  toast('案例已儲存（草稿）✓');
-}
-function toggleCase(id){
-  const c = CASES.find(x=>x.id===id);
-  if(c){ c.published=!c.published; renderCases(); toast(c.published?'已發布 ✓':'已下架'); }
-}
-function deleteCase(id){
-  if(!confirm('確定刪除？')) return;
-  CASES = CASES.filter(x=>x.id!==id); renderCases();
-  document.getElementById('s-cases').textContent = CASES.length;
-  toast('已刪除');
+// ── Cloudinary Upload ──
+async function uploadToCloudinary(file) {
+  const fd = new FormData();
+  fd.append('file', file);
+  fd.append('upload_preset', CLOUDINARY_PRESET);
+  const r = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD}/image/upload`, {
+    method: 'POST', body: fd
+  });
+  if (!r.ok) throw new Error('上傳失敗');
+  const data = await r.json();
+  return data.secure_url;
 }
 
-// ── Videos ──
-function renderVideos(){
-  document.getElementById('videos-tbody').innerHTML = VIDEOS.map(v=>`
-    <tr>
-      <td><img class="td-img" src="${v.thumb||''}" alt="" onerror="this.style.background='#F0EDE8'"></td>
-      <td>
-        <div class="td-name">${v.title}</div>
-        <div class="td-sub">${v.desc}</div>
-      </td>
-      <td><span class="badge ${v.published?'badge-green':'badge-gray'}">${v.published?'已發布':'草稿'}</span></td>
-      <td style="color:var(--ink3);font-size:13px">${v.date}</td>
-      <td>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-secondary btn-sm" onclick="toggleVideo(${v.id})">${v.published?'下架':'發布'}</button>
-          <button class="btn btn-danger btn-sm" onclick="deleteVideo(${v.id})">刪除</button>
-        </div>
-      </td>
-    </tr>`).join('');
+async function uploadVideoToCloudinary(file, onProgress) {
+  return new Promise((resolve, reject) => {
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('upload_preset', CLOUDINARY_PRESET);
+    const xhr = new XMLHttpRequest();
+    xhr.upload.onprogress = e => { if (e.lengthComputable && onProgress) onProgress(e.loaded / e.total * 100); };
+    xhr.onload = () => {
+      if (xhr.status === 200) resolve(JSON.parse(xhr.response).secure_url);
+      else reject(new Error('上傳失敗'));
+    };
+    xhr.onerror = () => reject(new Error('網路錯誤'));
+    xhr.open('POST', `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD}/video/upload`);
+    xhr.send(fd);
+  });
 }
-function openAddVideo(){ document.getElementById('m-video').classList.add('open'); }
-function selectVideo(input){
-  const f = input.files[0];
-  if(f) document.getElementById('v-file-name').textContent = f.name;
-}
-function saveVideo(){
-  const title = document.getElementById('v-title').value || '新影片';
-  const desc = document.getElementById('v-desc').value;
-  const prog = document.getElementById('upload-prog');
-  const fill = document.getElementById('prog-fill');
-  prog.style.display='block';
-  let w=0;
-  const iv = setInterval(()=>{
-    w+=8; fill.style.width=w+'%';
-    if(w>=100){
-      clearInterval(iv);
-      prog.style.display='none';
-      VIDEOS.unshift({id:Date.now(),title,desc,published:false,date:'今天',thumb:'https://images.unsplash.com/photo-1554244933-d876deb6b2ff?w=80&h=80&fit=crop'});
-      renderVideos();
-      document.getElementById('s-videos').textContent=VIDEOS.length;
-      closeModal('m-video');
-      toast('影片已上傳 ✓');
+
+// ── Image Upload Handler ──
+async function handleImgUpload(input, previewId, type) {
+  const files = Array.from(input.files);
+  if (!files.length) return;
+  for (const file of files) {
+    if (file.size > 10 * 1024 * 1024) { toast('圖片超過 10MB 限制', 'err'); continue; }
+    const previewEl = addPreviewSpinner(previewId);
+    try {
+      const url = await uploadToCloudinary(file);
+      uploadedImages[type].push(url);
+      updatePreviewItem(previewEl, url, type);
+      toast('圖片上傳成功 ✓');
+    } catch (e) {
+      previewEl.remove();
+      toast('圖片上傳失敗，請重試', 'err');
     }
-  },80);
+  }
+  input.value = '';
 }
-function toggleVideo(id){
-  const v=VIDEOS.find(x=>x.id===id);
-  if(v){v.published=!v.published;renderVideos();toast(v.published?'已發布 ✓':'已下架');}
+
+function addPreviewSpinner(previewId) {
+  const container = document.getElementById(previewId);
+  const div = document.createElement('div');
+  div.className = 'preview-item';
+  div.innerHTML = '<div class="upload-uploading"><div class="upload-spinner"></div></div>';
+  container.appendChild(div);
+  return div;
 }
-function deleteVideo(id){
-  if(!confirm('確定刪除？'))return;
-  VIDEOS=VIDEOS.filter(x=>x.id!==id);renderVideos();
-  document.getElementById('s-videos').textContent=VIDEOS.length;
+
+function updatePreviewItem(el, url, type) {
+  el.innerHTML = `<img src="${url}" alt="預覽">
+    <button class="preview-rm" onclick="removeUploadedImg('${url}','${type}',this.closest('.preview-item'))">×</button>`;
+}
+
+function removeUploadedImg(url, type, el) {
+  uploadedImages[type] = uploadedImages[type].filter(u => u !== url);
+  el.remove();
+}
+
+// Drag & drop
+function dragOver(e, zoneId) { e.preventDefault(); document.getElementById(zoneId).classList.add('drag'); }
+function dragLeave(zoneId) { document.getElementById(zoneId).classList.remove('drag'); }
+function dropFiles(e, inputId, previewId) {
+  e.preventDefault();
+  const zone = e.currentTarget;
+  zone.classList.remove('drag');
+  const dt = e.dataTransfer;
+  const input = document.getElementById(inputId);
+  const type = previewId.includes('before') ? 'before' : 'after';
+  if (dt.files.length) {
+    Object.defineProperty(input, 'files', { value: dt.files, configurable: true });
+    handleImgUpload(input, previewId, type);
+  }
+}
+
+// ── CASES ──
+const catMap = { nose:'隆鼻', eyes:'雙眼皮', face:'輪廓整形', filler:'填充', breast:'豐胸', body:'體雕' };
+
+async function loadCases() {
+  try {
+    const r = await fetch(`${API}/cases`);
+    const data = await r.json();
+    CASES = data.cases || [];
+  } catch { CASES = []; }
+  renderCasesTable();
+}
+
+function renderCasesTable() {
+  const tbody = document.getElementById('cases-tbody');
+  if (!CASES.length) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--ink3)">尚無案例，點右上角「新增案例」開始</td></tr>';
+    return;
+  }
+  tbody.innerHTML = CASES.map(c => {
+    const firstImg = c.images?.find(i => i.type === 'before')?.url || c.images?.[0]?.url || '';
+    const imgCount = c.images?.length || 0;
+    return `<tr>
+      <td>${firstImg ? `<img class="td-img" src="${firstImg}" alt="">` : '<div style="width:44px;height:44px;background:var(--cream2);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:18px">📷</div>'}</td>
+      <td>
+        <div style="font-weight:500">${esc(c.title)}</div>
+        <div style="font-size:12px;color:var(--ink3)">${esc(c.desc||'')}</div>
+        ${c.hospital ? `<div style="font-size:11px;color:var(--light)">🏥 ${esc(c.hospital)}</div>` : ''}
+        ${imgCount > 0 ? `<div style="font-size:11px;color:var(--light)">📸 ${imgCount} 張圖片</div>` : ''}
+      </td>
+      <td><span class="badge badge-blue">${catMap[c.category] || c.category}</span></td>
+      <td><span class="badge ${c.status === 'published' ? 'badge-green' : 'badge-gray'}">${c.status === 'published' ? '已發布' : '草稿'}</span></td>
+      <td style="color:var(--ink3);font-size:12px">${formatDate(c.createdTime)}</td>
+      <td>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button class="btn btn-secondary btn-sm" onclick="editCase('${c.id}')">編輯</button>
+          <button class="btn btn-secondary btn-sm" onclick="toggleCaseStatus('${c.id}','${c.status}')">${c.status === 'published' ? '下架' : '發布'}</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteCase('${c.id}')">刪除</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function openAddCase() {
+  editingCaseId = null;
+  uploadedImages = { before: [], after: [], vthumb: [] };
+  document.getElementById('m-case-title').textContent = '新增成果案例';
+  ['c-id','c-title','c-desc','c-hospital','c-doctor','c-recovery','c-price'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('c-cat').value = 'nose';
+  document.getElementById('before-prev').innerHTML = '';
+  document.getElementById('after-prev').innerHTML = '';
+  document.getElementById('m-case').classList.add('open');
+}
+
+function editCase(id) {
+  const c = CASES.find(x => x.id === id);
+  if (!c) return;
+  editingCaseId = id;
+  uploadedImages = { before: [], after: [], vthumb: [] };
+  document.getElementById('m-case-title').textContent = '編輯案例';
+  document.getElementById('c-id').value = id;
+  document.getElementById('c-title').value = c.title || '';
+  document.getElementById('c-cat').value = c.category || 'nose';
+  document.getElementById('c-desc').value = c.desc || '';
+  document.getElementById('c-hospital').value = c.hospital || '';
+  document.getElementById('c-doctor').value = c.doctor || '';
+  document.getElementById('c-recovery').value = c.recovery_days || '';
+  document.getElementById('c-price').value = c.price_range || '';
+
+  // Restore existing images
+  const beforePrev = document.getElementById('before-prev');
+  const afterPrev = document.getElementById('after-prev');
+  beforePrev.innerHTML = '';
+  afterPrev.innerHTML = '';
+  (c.images || []).forEach(img => {
+    const type = img.type || 'before';
+    uploadedImages[type].push(img.url);
+    const container = type === 'before' ? beforePrev : afterPrev;
+    const div = document.createElement('div');
+    div.className = 'preview-item';
+    div.innerHTML = `<img src="${img.url}" alt=""><button class="preview-rm" onclick="removeUploadedImg('${img.url}','${type}',this.closest('.preview-item'))">×</button>`;
+    container.appendChild(div);
+  });
+
+  document.getElementById('m-case').classList.add('open');
+}
+
+async function saveCase() {
+  const title = document.getElementById('c-title').value.trim();
+  if (!title) { toast('請填寫案例標題', 'err'); return; }
+
+  const images = [
+    ...uploadedImages.before.map(url => ({ url, type: 'before' })),
+    ...uploadedImages.after.map(url => ({ url, type: 'after' })),
+  ];
+
+  const payload = {
+    title,
+    category: document.getElementById('c-cat').value,
+    desc: document.getElementById('c-desc').value,
+    hospital: document.getElementById('c-hospital').value,
+    doctor: document.getElementById('c-doctor').value,
+    recovery_days: document.getElementById('c-recovery').value,
+    price_range: document.getElementById('c-price').value,
+    images,
+  };
+
+  const btn = document.getElementById('case-save-btn');
+  btn.disabled = true;
+  btn.textContent = '儲存中…';
+
+  try {
+    let r;
+    if (editingCaseId) {
+      r = await fetch(`${API}/cases?id=${editingCaseId}`, {
+        method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } else {
+      r = await fetch(`${API}/cases`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    }
+    if (!r.ok) throw new Error('儲存失敗');
+    toast(editingCaseId ? '案例已更新 ✓' : '案例已儲存（草稿）✓');
+    closeModal('m-case');
+    await loadCases();
+    updateDashStats();
+  } catch (e) {
+    toast('儲存失敗，請重試', 'err');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '儲存案例';
+  }
+}
+
+async function toggleCaseStatus(id, current) {
+  const newStatus = current === 'published' ? 'draft' : 'published';
+  try {
+    const r = await fetch(`${API}/cases?id=${id}`, {
+      method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: newStatus })
+    });
+    if (!r.ok) throw new Error();
+    const c = CASES.find(x => x.id === id);
+    if (c) c.status = newStatus;
+    renderCasesTable();
+    updateDashStats();
+    toast(newStatus === 'published' ? '已發布到前台 ✓' : '已下架');
+  } catch { toast('操作失敗，請重試', 'err'); }
+}
+
+async function deleteCase(id) {
+  if (!confirm('確定刪除？此操作無法復原')) return;
+  try {
+    const r = await fetch(`${API}/cases?id=${id}`, { method: 'DELETE' });
+    if (!r.ok) throw new Error();
+    CASES = CASES.filter(x => x.id !== id);
+    renderCasesTable();
+    updateDashStats();
+    toast('已刪除');
+  } catch { toast('刪除失敗', 'err'); }
+}
+
+// ── VIDEOS ──
+async function loadVideos() {
+  try {
+    const r = await fetch(`${API}/cases?type=video`);
+    // Videos stored separately — use mock for now
+    VIDEOS = [];
+  } catch { VIDEOS = []; }
+  renderVideosTable();
+}
+
+function renderVideosTable() {
+  const tbody = document.getElementById('videos-tbody');
+  if (!VIDEOS.length) {
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--ink3)">尚無影片</td></tr>';
+    return;
+  }
+  tbody.innerHTML = VIDEOS.map(v => `
+    <tr>
+      <td>${v.thumb ? `<img class="td-img" src="${v.thumb}">` : '<div style="width:44px;height:44px;background:var(--cream2);border-radius:7px;display:flex;align-items:center;justify-content:center">🎬</div>'}</td>
+      <td><div style="font-weight:500">${esc(v.title)}</div><div style="font-size:12px;color:var(--ink3)">${esc(v.desc||'')}</div></td>
+      <td><span class="badge ${v.published ? 'badge-green' : 'badge-gray'}">${v.published ? '已發布' : '草稿'}</span></td>
+      <td style="color:var(--ink3);font-size:12px">${v.date||'—'}</td>
+      <td><div style="display:flex;gap:6px"><button class="btn btn-danger btn-sm" onclick="deleteVideo('${v.id}')">刪除</button></div></td>
+    </tr>`).join('');
+}
+
+function openAddVideo() { document.getElementById('m-video').classList.add('open'); }
+function selectVideo(input) {
+  if (input.files[0]) document.getElementById('v-file-name').textContent = input.files[0].name;
+}
+
+async function saveVideo() {
+  const title = document.getElementById('v-title').value.trim();
+  const file = document.getElementById('v-file').files[0];
+  if (!title || !file) { toast('請填寫標題並選擇影片', 'err'); return; }
+
+  const prog = document.getElementById('video-upload-prog');
+  const fill = document.getElementById('video-prog-fill');
+  prog.style.display = 'block';
+  fill.style.width = '0%';
+
+  try {
+    const videoUrl = await uploadVideoToCloudinary(file, pct => fill.style.width = pct + '%');
+    const thumb = uploadedImages.vthumb[0] || '';
+    VIDEOS.unshift({ id: Date.now(), title, desc: document.getElementById('v-desc').value, thumb, videoUrl, published: false, date: '今天' });
+    renderVideosTable();
+    closeModal('m-video');
+    toast('影片上傳成功 ✓');
+  } catch { toast('影片上傳失敗，請重試', 'err'); }
+  finally { prog.style.display = 'none'; }
+}
+
+function deleteVideo(id) {
+  if (!confirm('確定刪除？')) return;
+  VIDEOS = VIDEOS.filter(x => x.id != id);
+  renderVideosTable();
   toast('已刪除');
 }
 
 // ── FAQ ──
-function renderFAQ(){
-  document.getElementById('faq-editor').innerHTML = FAQ_DATA.map((f,i)=>`
+async function loadFAQAdmin() {
+  try {
+    const r = await fetch(`${API}/faq`);
+    const data = await r.json();
+    FAQ_DATA = data.faq || getDefaultFAQ();
+  } catch { FAQ_DATA = getDefaultFAQ(); }
+  renderFAQEditor();
+}
+
+function getDefaultFAQ() {
+  return [
+    { q: '去上海整形安全嗎？', a: '合作醫院均在上海衛健委登記，可官網查詢。帶超過 50 位姐妹，術後持續追蹤。' },
+    { q: '需要在上海待幾天？', a: '一般手術建議 4–5 天，輪廓等大型手術建議 7 天。' },
+    { q: '費用大概是多少？', a: '雙眼皮約 NT$3–8 萬，隆鼻約 NT$6–15 萬，輪廓約 NT$15–40 萬。' },
+  ];
+}
+
+function renderFAQEditor() {
+  document.getElementById('faq-editor').innerHTML = FAQ_DATA.map((f, i) => `
     <div style="margin-bottom:14px;padding:16px;background:#FAFAF8;border-radius:8px;border:1px solid var(--border2)">
       <div style="display:flex;justify-content:space-between;margin-bottom:10px">
-        <span style="font-size:12px;font-weight:500;color:var(--ink3)">問題 ${i+1}</span>
+        <span style="font-size:12px;font-weight:500;color:var(--ink3)">問題 ${i + 1}</span>
         <button class="btn btn-danger btn-sm" onclick="removeFAQ(${i})">移除</button>
       </div>
       <div class="form-group" style="margin-bottom:8px">
         <label>問題</label>
-        <input value="${f.q.replace(/"/g,'&quot;')}" oninput="FAQ_DATA[${i}].q=this.value">
+        <input value="${esc(f.q)}" oninput="FAQ_DATA[${i}].q=this.value">
       </div>
       <div class="form-group">
         <label>回答</label>
-        <textarea rows="2" oninput="FAQ_DATA[${i}].a=this.value">${f.a}</textarea>
+        <textarea rows="2" oninput="FAQ_DATA[${i}].a=this.value">${esc(f.a)}</textarea>
       </div>
     </div>`).join('');
-  document.getElementById('s-faq').textContent = FAQ_DATA.length;
 }
-function addFAQ(){FAQ_DATA.push({q:'',a:''});renderFAQ();}
-function removeFAQ(i){FAQ_DATA.splice(i,1);renderFAQ();}
-function saveFAQ(){toast('FAQ 已儲存 ✓','ok');}
 
-// ── Inquiries ──
-function renderInquiries(){
-  const itemMap = {nose:'隆鼻',eyes:'雙眼皮',face:'輪廓整形',filler:'填充',other:'其他'};
-  document.getElementById('inq-tbody').innerHTML = INQUIRIES.map(q=>`
+function addFAQ() { FAQ_DATA.push({ q: '', a: '' }); renderFAQEditor(); }
+function removeFAQ(i) { FAQ_DATA.splice(i, 1); renderFAQEditor(); }
+
+async function saveFAQ() {
+  try {
+    await fetch(`${API}/faq`, {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ faq: FAQ_DATA })
+    });
+    toast('問答已儲存 ✓');
+  } catch { toast('儲存失敗，請重試', 'err'); }
+}
+
+// ── INQUIRIES ──
+async function loadInquiries() {
+  try {
+    const r = await fetch(`${API}/inquiries`);
+    const data = await r.json();
+    INQUIRIES = data.inquiries || [];
+  } catch { INQUIRIES = []; }
+  renderInquiriesTable();
+  renderDashInq();
+}
+
+const itemMap = { nose:'隆鼻', eyes:'雙眼皮', face:'輪廓整形', filler:'填充', other:'其他' };
+
+function renderInquiriesTable() {
+  const tbody = document.getElementById('inq-tbody');
+  if (!INQUIRIES.length) {
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--ink3)">尚無諮詢記錄</td></tr>';
+    return;
+  }
+  tbody.innerHTML = INQUIRIES.map(q => `
     <tr>
-      <td style="color:var(--ink3);font-size:12.5px;white-space:nowrap">${q.date}</td>
-      <td class="td-name">${q.name}</td>
-      <td style="font-size:13px">${q.contact}</td>
-      <td><span class="badge badge-blue">${itemMap[q.item]||q.item||'—'}</span></td>
-      <td style="font-size:13px;color:var(--ink3);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${q.msg||'—'}</td>
-      <td><span class="badge ${q.status==='new'?'badge-amber':'badge-green'}">${q.status==='new'?'待回覆':'已回覆'}</span></td>
+      <td style="color:var(--ink3);font-size:12px;white-space:nowrap">${formatDate(q.createdTime)}</td>
+      <td style="font-weight:500">${esc(q.name)}</td>
+      <td style="font-size:13px">${esc(q.contact)}</td>
+      <td><span class="badge badge-blue">${itemMap[q.item] || q.item || '—'}</span></td>
+      <td style="font-size:12px;color:var(--ink3);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(q.message||'—')}</td>
+      <td><span class="badge ${q.status === 'new' ? 'badge-amber' : 'badge-green'}">${q.status === 'new' ? '待回覆' : '已回覆'}</span></td>
       <td>
         <div style="display:flex;gap:6px">
-          <button class="btn btn-secondary btn-sm" onclick="viewInq(${q.id})">查看</button>
-          ${q.status==='new'?`<button class="btn btn-success btn-sm" onclick="markInq(${q.id})">已回覆</button>`:''}
+          <button class="btn btn-secondary btn-sm" onclick="viewInq('${q.id}')">查看</button>
+          ${q.status === 'new' ? `<button class="btn btn-success btn-sm" onclick="markInq('${q.id}')">已回覆</button>` : ''}
         </div>
       </td>
     </tr>`).join('');
 }
-function renderDashInq(){
-  const itemMap={nose:'隆鼻',eyes:'雙眼皮',face:'輪廓整形',filler:'填充',other:'其他'};
-  document.getElementById('dash-inq').innerHTML = INQUIRIES.slice(0,5).map(q=>`
+
+function renderDashInq() {
+  const tbody = document.getElementById('dash-inq-tbody');
+  const recent = INQUIRIES.slice(0, 5);
+  if (!recent.length) {
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--ink3)">尚無諮詢記錄</td></tr>';
+    return;
+  }
+  tbody.innerHTML = recent.map(q => `
     <tr>
-      <td style="color:var(--ink3);font-size:12px">${q.date}</td>
-      <td class="td-name">${q.name}</td>
-      <td><span class="badge badge-blue">${itemMap[q.item]||'—'}</span></td>
-      <td><span class="badge ${q.status==='new'?'badge-amber':'badge-green'}">${q.status==='new'?'待回覆':'已回覆'}</span></td>
+      <td style="color:var(--ink3);font-size:12px">${formatDate(q.createdTime)}</td>
+      <td style="font-weight:500">${esc(q.name)}</td>
+      <td><span class="badge badge-blue">${itemMap[q.item] || '—'}</span></td>
+      <td><span class="badge ${q.status === 'new' ? 'badge-amber' : 'badge-green'}">${q.status === 'new' ? '待回覆' : '已回覆'}</span></td>
     </tr>`).join('');
 }
-function viewInq(id){
-  activeInqId=id;
-  const q=INQUIRIES.find(x=>x.id===id);
-  const itemMap={nose:'隆鼻',eyes:'雙眼皮',face:'輪廓整形',filler:'填充',other:'其他'};
-  document.getElementById('inq-detail').innerHTML=`
-    <div class="inq-row"><label>姓名</label><span>${q.name}</span></div>
-    <div class="inq-row"><label>聯絡方式</label><span>${q.contact}</span></div>
-    <div class="inq-row"><label>想了解</label><span>${itemMap[q.item]||q.item||'—'}</span></div>
-    <div class="inq-row"><label>留言</label><span>${q.msg||'（無留言）'}</span></div>
-    <div class="inq-row"><label>時間</label><span>${q.date}</span></div>
-    <div class="inq-row"><label>狀態</label><span class="badge ${q.status==='new'?'badge-amber':'badge-green'}">${q.status==='new'?'待回覆':'已回覆'}</span></div>`;
+
+function viewInq(id) {
+  activeInqId = id;
+  const q = INQUIRIES.find(x => x.id === id);
+  if (!q) return;
+  document.getElementById('inq-detail').innerHTML = `
+    <div class="inq-row"><label>姓名</label><span>${esc(q.name)}</span></div>
+    <div class="inq-row"><label>聯絡方式</label><span>${esc(q.contact)}</span></div>
+    <div class="inq-row"><label>想了解</label><span>${itemMap[q.item] || q.item || '—'}</span></div>
+    <div class="inq-row"><label>留言</label><span>${esc(q.message||'（無留言）')}</span></div>
+    <div class="inq-row"><label>時間</label><span>${formatDate(q.createdTime)}</span></div>
+    <div class="inq-row"><label>狀態</label><span class="badge ${q.status === 'new' ? 'badge-amber' : 'badge-green'}">${q.status === 'new' ? '待回覆' : '已回覆'}</span></div>`;
   document.getElementById('m-inq').classList.add('open');
 }
-function markReplied(){
-  if(!activeInqId)return;
-  const q=INQUIRIES.find(x=>x.id===activeInqId);
-  if(q){q.status='replied';renderInquiries();renderDashInq();}
+
+async function markReplied() {
+  if (!activeInqId) return;
+  await markInq(activeInqId);
   closeModal('m-inq');
-  toast('已標記為已回覆 ✓');
-  const newCount=INQUIRIES.filter(i=>i.status==='new').length;
-  document.getElementById('inq-badge').textContent=newCount;
-  if(!newCount)document.getElementById('inq-badge').style.display='none';
-  document.getElementById('s-inq').textContent=newCount;
 }
-function markInq(id){
-  const q=INQUIRIES.find(x=>x.id===id);
-  if(q){q.status='replied';renderInquiries();renderDashInq();}
-  toast('已標記為已回覆 ✓');
+
+async function markInq(id) {
+  try {
+    await fetch(`${API}/inquiries?id=${id}`, {
+      method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: 'replied' })
+    });
+    const q = INQUIRIES.find(x => x.id === id);
+    if (q) q.status = 'replied';
+    renderInquiriesTable();
+    renderDashInq();
+    updateDashStats();
+    toast('已標記為已回覆 ✓');
+  } catch { toast('操作失敗', 'err'); }
 }
-function exportCSV(){
-  const rows=[['時間','姓名','聯絡','項目','訊息','狀態']];
-  INQUIRIES.forEach(q=>rows.push([q.date,q.name,q.contact,q.item,q.msg||'',q.status]));
-  const csv=rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));
-  a.download='諮詢記錄.csv';a.click();
+
+function exportCSV() {
+  const rows = [['時間', '姓名', '聯絡', '項目', '訊息', '狀態']];
+  INQUIRIES.forEach(q => rows.push([formatDate(q.createdTime), q.name, q.contact, q.item, q.message || '', q.status]));
+  const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8' }));
+  a.download = `諮詢記錄_${new Date().toLocaleDateString('zh-TW')}.csv`;
+  a.click();
   toast('CSV 已匯出 ✓');
 }
 
-// ── Modals ──
-function openModal(id){document.getElementById(id).classList.add('open')}
-function closeModal(id){document.getElementById(id).classList.remove('open')}
-document.querySelectorAll('.modal-overlay').forEach(m=>{
-  m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')});
+// ── DASHBOARD STATS ──
+function updateDashStats() {
+  document.getElementById('s-cases').textContent = CASES.length;
+  const newCount = INQUIRIES.filter(i => i.status === 'new').length;
+  document.getElementById('s-inq').textContent = newCount;
+  document.getElementById('s-published').textContent = CASES.filter(c => c.status === 'published').length;
+  document.getElementById('s-draft').textContent = CASES.filter(c => c.status !== 'published').length;
+  const badge = document.getElementById('inq-badge');
+  badge.textContent = newCount;
+  badge.style.display = newCount ? 'inline' : 'none';
+}
+
+// ── SETTINGS ──
+function saveLineUrl() {
+  const url = document.getElementById('s-line-url').value;
+  localStorage.setItem('line_url', url);
+  document.getElementById('line-url-status').textContent = url ? '已設定' : '未設定';
+  document.getElementById('line-url-status').className = `badge ${url ? 'badge-green' : 'badge-gray'}`;
+  toast('LINE 設定已儲存 ✓');
+}
+
+function changePW() {
+  const p1 = document.getElementById('s-pw1').value;
+  const p2 = document.getElementById('s-pw2').value;
+  if (!p1 || p1.length < 6) { toast('密碼至少 6 位', 'err'); return; }
+  if (p1 !== p2) { toast('兩次密碼不一致', 'err'); return; }
+  toast('密碼已更新（需更新程式碼才能生效）✓');
+  document.getElementById('s-pw1').value = '';
+  document.getElementById('s-pw2').value = '';
+}
+
+// ── MODALS ──
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
 });
 
-// ── Upload preview ──
-function previewImg(input, previewId){
-  const container=document.getElementById(previewId);
-  container.innerHTML='';
-  Array.from(input.files).forEach(file=>{
-    const reader=new FileReader();
-    reader.onload=e=>{
-      container.innerHTML+=`<div class="preview-item"><img src="${e.target.result}"><button class="preview-rm" onclick="clearPreview('${input.id}','${previewId}')">×</button></div>`;
-    };
-    reader.readAsDataURL(file);
-  });
+// ── UTILS ──
+function esc(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
-function clearPreview(inputId,previewId){
-  document.getElementById(inputId).value='';
-  document.getElementById(previewId).innerHTML='';
+function formatDate(ts) {
+  if (!ts) return '—';
+  const d = new Date(ts);
+  return `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
 }
 
-// ── Password ──
-function changePW(){
-  const p1=document.getElementById('s-pw1').value;
-  const p2=document.getElementById('s-pw2').value;
-  if(!p1||p1.length<6){toast('密碼至少 6 位','err');return;}
-  if(p1!==p2){toast('兩次密碼不一致','err');return;}
-  toast('密碼已更新 ✓');
-  document.getElementById('s-pw1').value='';document.getElementById('s-pw2').value='';
+// Load saved LINE url
+const savedLine = localStorage.getItem('line_url');
+if (savedLine) {
+  document.getElementById('s-line-url').value = savedLine;
+  document.getElementById('line-url-status').textContent = '已設定';
+  document.getElementById('line-url-status').className = 'badge badge-green';
 }
 </script>
 </body>
