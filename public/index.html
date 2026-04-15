@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小仙女醫美 × 上海醫美顧問 | 專業整形諮詢</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#FAF8F5;--cream2:#F2EDE6;--ink:#1C1917;--ink2:#44403C;--ink3:#78716C;
+  --rose:#C8847A;--rose2:#E8A9A2;--rose3:#F9EBE9;
+  --line-green:#06C755;--gold:#B8975A;--white:#FFFFFF;
+  --radius:12px;--shadow:0 4px 24px rgba(28,25,23,.08);--shadow-lg:0 12px 48px rgba(28,25,23,.14);
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Noto Serif TC',serif;
+  --font-ui:'Outfit',sans-serif;
+}
+body{font-family:var(--font-body);background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+img{display:block;max-width:100%}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,25,23,.06);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:var(--shadow)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;gap:32px}
+.nav-logo{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:.03em}
+.nav-logo span{color:var(--rose)}
+.nav-links{display:flex;align-items:center;gap:28px;margin-left:auto}
+.nav-links a{font-family:var(--font-ui);font-size:14px;color:var(--ink2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--rose)}
+.nav-cta{background:var(--ink)!important;color:var(--cream)!important;padding:8px 20px;border-radius:24px}
+.nav-cta:hover{background:var(--rose)!important;color:#fff!important}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;margin-left:auto}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all .25s}
+.nav-mobile{display:none;flex-direction:column;padding:12px 24px 20px;gap:4px;border-top:1px solid rgba(28,25,23,.06)}
+.nav-mobile.open{display:flex}
+.nav-mobile a{font-family:var(--font-ui);font-size:15px;color:var(--ink2);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(28,25,23,.05)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:15px;font-weight:500;padding:13px 28px;border-radius:8px;text-decoration:none;cursor:pointer;border:none;transition:all .22s;letter-spacing:.02em}
+.btn-primary{background:var(--ink);color:var(--cream)}
+.btn-primary:hover{background:var(--rose);transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,132,122,.35)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(28,25,23,.2)}
+.btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:var(--cream)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--cream)}
+.btn-line{background:var(--line-green);color:#fff;width:100%;justify-content:center;font-size:16px;padding:15px;border-radius:10px}
+.btn-line:hover{background:#05b34c;transform:translateY(-1px);box-shadow:0 6px 20px rgba(6,199,85,.35)}
+
+/* SECTION COMMON */
+.section-header{text-align:center;margin-bottom:56px}
+.section-eyebrow{font-family:var(--font-ui);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
+.section-title{font-family:var(--font-display);font-size:clamp(30px,4vw,42px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:16px}
+.section-title em{font-style:italic;color:var(--rose)}
+.section-desc{font-size:15px;color:var(--ink3);max-width:540px;margin:0 auto}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 24px 80px}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,#E8C4BE 0%,transparent 70%);top:-200px;right:-100px}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,#D4B896 0%,transparent 70%);bottom:-100px;left:-50px}
+.hero-content{position:relative;z-index:1;max-width:640px;animation:fadeUp .9s ease both}
+.hero-eyebrow{font-family:var(--font-ui);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--rose)}
+.hero-title{font-family:var(--font-display);font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:24px}
+.hero-title em{font-style:italic;color:var(--rose)}
+.hero-sub{font-size:16px;color:var(--ink2);line-height:1.75;margin-bottom:40px;max-width:480px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.hero-stats{display:flex;align-items:center;gap:24px;padding:20px 28px;background:rgba(255,255,255,.6);backdrop-filter:blur(8px);border-radius:12px;border:1px solid rgba(28,25,23,.07);width:fit-content}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat strong{font-family:var(--font-display);font-size:26px;font-weight:600;color:var(--ink)}
+.stat span{font-family:var(--font-ui);font-size:12px;color:var(--ink3)}
+.stat-divider{width:1px;height:32px;background:rgba(28,25,23,.12)}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:1}
+.hero-scroll span{font-family:var(--font-ui);font-size:11px;letter-spacing:.1em;color:var(--ink3)}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--ink3),transparent);animation:scrollPulse 2s ease infinite}
+
+/* TRUST BAR */
+.trust-bar{background:var(--ink);padding:20px 0}
+.trust-items{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;font-family:var(--font-ui);font-size:13px;color:rgba(250,248,245,.8)}
+.trust-item svg{opacity:.7;flex-shrink:0}
+
+/* CASES */
+.cases{padding:100px 0}
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:48px}
+.filter-btn{font-family:var(--font-ui);font-size:13px;padding:7px 18px;border-radius:20px;border:1.5px solid rgba(28,25,23,.15);background:transparent;color:var(--ink2);cursor:pointer;transition:all .2s}
+.filter-btn.active,.filter-btn:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-bottom:48px}
+.case-card{border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;cursor:pointer}
+.case-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.case-images{display:grid;grid-template-columns:1fr 1fr;gap:2px;height:220px;overflow:hidden}
+.case-img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.case-card:hover .case-img{transform:scale(1.04)}
+.case-label{position:relative;padding:16px 18px}
+.case-tag{font-family:var(--font-ui);font-size:11px;padding:3px 10px;border-radius:10px;background:var(--rose3);color:var(--rose);display:inline-block;margin-bottom:6px}
+.case-label h4{font-size:15px;font-weight:500;margin-bottom:4px}
+.case-label p{font-size:13px;color:var(--ink3)}
+.case-before-after{position:absolute;top:12px;right:12px;font-family:var(--font-ui);font-size:10px;background:rgba(28,25,23,.6);color:#fff;padding:3px 8px;border-radius:4px;letter-spacing:.05em}
+.cases-more{text-align:center}
+
+/* PROCESS */
+.process{padding:100px 0;background:var(--ink)}
+.process .section-eyebrow{color:var(--rose2)}
+.process .section-title{color:var(--cream)}
+.process-steps{display:flex;flex-direction:column;gap:0;position:relative;padding-left:60px;max-width:700px}
+.process-steps::before{content:'';position:absolute;left:20px;top:24px;bottom:24px;width:1px;background:linear-gradient(to bottom,transparent,rgba(250,248,245,.2) 10%,rgba(250,248,245,.2) 90%,transparent)}
+.process-step{display:flex;gap:32px;padding:32px 0;border-bottom:1px solid rgba(250,248,245,.07);position:relative;opacity:0;transform:translateX(-20px);transition:opacity .5s,transform .5s}
+.process-step.visible{opacity:1;transform:translateX(0)}
+.process-step:last-child{border-bottom:none}
+.step-number{position:absolute;left:-52px;top:36px;font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--rose);letter-spacing:.05em;background:var(--ink);padding:2px 4px}
+.step-content h3{font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--cream);margin-bottom:10px}
+.step-content p{font-size:14px;color:rgba(250,248,245,.65);line-height:1.8;margin-bottom:14px}
+.step-detail{display:flex;gap:16px;font-family:var(--font-ui);font-size:12px;color:rgba(250,248,245,.4)}
+.step-detail span::before{content:'·';margin-right:4px}
+
+/* FAQ */
+.faq{padding:100px 0;background:var(--cream2)}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--white);border-radius:var(--radius);box-shadow:0 2px 12px rgba(28,25,23,.05);overflow:hidden}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;text-align:left;background:none;border:none;cursor:pointer;font-family:var(--font-body);font-size:15px;font-weight:500;color:var(--ink)}
+.faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--rose);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:16px;font-family:var(--font-ui);transition:transform .25s,background .2s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--rose);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;font-size:14px;color:var(--ink2);line-height:1.8}
+.faq-a.open{max-height:400px;padding:0 24px 20px}
+
+/* CONTACT */
+.contact{padding:100px 0}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-text h2{font-family:var(--font-display);font-size:clamp(32px,4vw,46px);font-weight:300;line-height:1.2;margin-bottom:16px;color:var(--ink)}
+.contact-text h2 em{font-style:italic;color:var(--rose)}
+.contact-text p{font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:28px}
+.contact-perks{list-style:none;display:flex;flex-direction:column;gap:10px}
+.contact-perks li{display:flex;align-items:center;gap:10px;font-family:var(--font-ui);font-size:14px;color:var(--ink2)}
+.contact-perks svg{color:var(--rose);flex-shrink:0}
+.contact-card{background:var(--white);border-radius:16px;padding:32px;box-shadow:var(--shadow-lg)}
+.contact-line-block{display:flex;align-items:center;gap:16px;padding:18px;background:#F0FDF4;border-radius:10px;border:1px solid #BBF7D0;margin-bottom:16px}
+.line-info strong{display:block;font-size:15px;font-weight:500;margin-bottom:2px}
+.line-info p{font-size:13px;color:var(--ink3);margin:0}
+.contact-form-divider{display:flex;align-items:center;gap:12px;margin:20px 0;font-family:var(--font-ui);font-size:12px;color:var(--ink3)}
+.contact-form-divider::before,.contact-form-divider::after{content:'';flex:1;height:1px;background:rgba(28,25,23,.1)}
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.form-row{display:flex;flex-direction:column;gap:5px}
+.form-row label{font-family:var(--font-ui);font-size:12px;font-weight:500;color:var(--ink2)}
+.form-row input,.form-row select,.form-row textarea{font-family:var(--font-body);font-size:14px;color:var(--ink);padding:11px 14px;border-radius:8px;border:1.5px solid rgba(28,25,23,.12);background:var(--cream);transition:border-color .2s;resize:none}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--rose)}
+.form-note{font-family:var(--font-ui);font-size:11px;color:var(--ink3);text-align:center;margin-top:4px}
+.form-success{display:flex;flex-direction:column;align-items:center;gap:12px;padding:40px 20px;text-align:center}
+.form-success h3{font-family:var(--font-display);font-size:24px}
+.form-success p{font-size:14px;color:var(--ink2)}
+
+/* FOOTER */
+.footer{background:var(--ink);padding:48px 0 24px}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid rgba(250,248,245,.1)}
+.footer-logo{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--cream);margin-bottom:8px}
+.footer-logo span{color:var(--rose)}
+.footer-brand p{font-size:13px;color:rgba(250,248,245,.5)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-family:var(--font-ui);font-size:13px;color:rgba(250,248,245,.5);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--cream)}
+.footer-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.footer-bottom p{font-family:var(--font-ui);font-size:12px;color:rgba(250,248,245,.3)}
+
+/* LINE FLOAT */
+.line-float{position:fixed;bottom:28px;right:24px;z-index:90;display:flex;align-items:center;gap:8px;background:var(--line-green);color:#fff;padding:12px 20px;border-radius:28px;text-decoration:none;font-family:var(--font-ui);font-size:14px;font-weight:500;box-shadow:0 4px 20px rgba(6,199,85,.4);transition:transform .2s,box-shadow .2s;animation:floatIn .6s .8s both}
+.line-float:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(6,199,85,.5)}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(28,25,23,.92);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.lightbox.open{display:flex}
+.lb-images{display:grid;grid-template-columns:1fr 1fr;gap:4px;border-radius:8px;overflow:hidden;max-width:88vw}
+.lb-images img{width:100%;max-height:72vh;object-fit:cover}
+.lb-caption{font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,.6)}
+.lb-close{position:fixed;top:20px;right:20px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:16px;cursor:pointer;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb-close:hover{background:rgba(255,255,255,.2)}
+.lb-nav{display:flex;gap:12px}
+.lb-btn{background:rgba(255,255,255,.15);border:none;color:#fff;padding:8px 20px;border-radius:20px;cursor:pointer;font-family:var(--font-ui);font-size:13px;transition:background .2s}
+.lb-btn:hover{background:rgba(255,255,255,.25)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollPulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes floatIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .hero-stats{flex-direction:column;gap:16px}
+  .stat-divider{width:60px;height:1px}
+  .trust-items{gap:20px}
+  .cases-grid{grid-template-columns:1fr}
+  .process-steps{padding-left:40px}
+  .contact-inner{grid-template-columns:1fr;gap:40px}
+  .contact-card{padding:24px}
+  .footer-inner{flex-direction:column}
+  .footer-bottom{flex-direction:column;gap:4px}
+  .line-float span{display:none}
+  .line-float{padding:14px;border-radius:50%}
+  .lb-images{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">小仙女<span>醫美</span></a>
+    <div class="nav-links">
+      <a href="#cases">成果案例</a>
+      <a href="#process">整形流程</a>
+      <a href="#faq">常見問答</a>
+      <a href="#contact" class="nav-cta">免費諮詢</a>
+    </div>
+    <button class="nav-burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="mobile-menu">
+    <a href="#cases">成果案例</a>
+    <a href="#process">整形流程</a>
+    <a href="#faq">常見問答</a>
+    <a href="#contact">免費諮詢</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">上海醫美 × 台灣專業顧問</p>
+    <h1 class="hero-title">讓每一次蛻變<br><em>都安心有人陪</em></h1>
+    <p class="hero-sub">帶超過 50 位姐妹赴上海整形，全程陪同，術後追蹤，不只帶你去，更帶你回來。</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        LINE 免費諮詢
+      </a>
+      <a href="#cases" class="btn btn-ghost">查看成果案例</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>50+</strong><span>成功案例</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>100%</strong><span>全程陪同</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>3年+</strong><span>上海醫院資源</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>向下探索</span><div class="scroll-line"></div></div>
+</section>
+
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>合作醫院均可衛健委查詢</span></div>
+      <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>術後 60 天持續追蹤</span></div>
+      <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>醫師資歷 10 年以上</span></div>
+      <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72 12.05 12.05 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.05 12.05 0 002.81.7A2 2 0 0122 14.92z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>24 小時緊急聯絡</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="cases">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">真實成果</p>
+      <h2 class="section-title">姐妹們的蛻變故事</h2>
+      <p class="section-desc">每一張照片背後，都是一段安心旅程。所有案例均獲客戶授權分享。</p>
+    </div>
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="nose">隆鼻</button>
+      <button class="filter-btn" data-filter="eyes">雙眼皮</button>
+      <button class="filter-btn" data-filter="face">輪廓</button>
+      <button class="filter-btn" data-filter="filler">填充</button>
+    </div>
+    <div class="cases-grid" id="cases-grid"></div>
+    <div class="cases-more"><a href="#contact" class="btn btn-outline">想了解更多案例？私訊小仙女</a></div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">全程陪同</p>
+      <h2 class="section-title">從台灣到上海，每一步都安排好</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-number">01</div><div class="step-content"><h3>免費線上諮詢</h3><p>加 LINE 說明你的需求和預算，小仙女會根據你的狀況推薦最適合的手術項目和醫院，不推不適合的，不賺昧心錢。</p><div class="step-detail"><span>平台：LINE 私訊</span><span>時間：24 小時內回覆</span></div></div></div>
+      <div class="process-step"><div class="step-number">02</div><div class="step-content"><h3>行程規劃確認</h3><p>確定手術項目後，安排上海行程：機票時間建議、住宿（距醫院步行 10 分鐘內）、術前注意事項清單一次給齊。</p><div class="step-detail"><span>提前：2–4 週規劃</span><span>包含：行程手冊</span></div></div></div>
+      <div class="process-step"><div class="step-number">03</div><div class="step-content"><h3>術前陪同評估</h3><p>抵達上海後，小仙女全程陪同到醫院做術前檢查和醫師諮詢，有任何問題當場幫你問清楚，不讓你一個人面對陌生的醫療環境。</p><div class="step-detail"><span>地點：上海醫院</span><span>小仙女全程在場</span></div></div></div>
+      <div class="process-step"><div class="step-number">04</div><div class="step-content"><h3>手術日全程陪同</h3><p>手術日小仙女在手術室外等候，術後陪你觀察恢復狀況，確認一切正常才離開。緊急狀況有小仙女在，不用一個人害怕。</p><div class="step-detail"><span>術後觀察：2–4 小時</span><span>緊急聯絡：24 小時</span></div></div></div>
+      <div class="process-step"><div class="step-number">05</div><div class="step-content"><h3>回台後持續追蹤</h3><p>回台後小仙女持續追蹤你的恢復狀況，第 7 天、14 天、30 天定期詢問，有任何異狀立即聯繫上海醫師確認，不讓你一個人摸索。</p><div class="step-detail"><span>追蹤：60 天</span><span>頻率：7／14／30 天</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">常見問題</p>
+      <h2 class="section-title">你最想知道的事</h2>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <p class="section-eyebrow">開始諮詢</p>
+        <h2>準備好了嗎？<br><em>小仙女陪你走</em></h2>
+        <p>不論你是剛開始考慮，還是已經決定了，都歡迎私訊小仙女。沒有壓力，沒有強迫，就是認真幫你解答。</p>
+        <ul class="contact-perks">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>免費諮詢，不收任何費用</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24 小時內回覆</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>資料絕對保密</li>
+        </ul>
+      </div>
+      <div class="contact-card">
+        <div class="contact-line-block">
+          <svg width="44" height="44" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="#06C755"/><path d="M40 22.5c0-7.18-7.178-13-16-13S8 15.32 8 22.5c0 6.5 5.77 11.95 13.55 12.98.53.11 1.25.35 1.43.8.16.41.1 1.06.05 1.47l-.23 1.4c-.07.41-.33 1.6 1.4.87 1.73-.73 9.35-5.5 12.76-9.42C39.1 27.95 40 25.33 40 22.5z" fill="white"/></svg>
+          <div class="line-info"><strong>加 LINE 免費諮詢</strong><p>點擊下方按鈕，直接開始聊</p></div>
+        </div>
+        <a href="https://line.me/ti/p/~YOUR_LINE_ID" class="btn btn-line" target="_blank" rel="noopener">立即加入 LINE 諮詢</a>
+        <div class="contact-form-divider"><span>或者填表讓小仙女主動聯繫你</span></div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-row"><label>你的稱呼</label><input type="text" name="name" placeholder="例：小雨" required></div>
+          <div class="form-row"><label>LINE ID / 手機號碼</label><input type="text" name="contact" placeholder="讓小仙女聯絡你" required></div>
+          <div class="form-row"><label>想了解的項目</label>
+            <select name="item"><option value="">請選擇</option><option value="nose">隆鼻</option><option value="eyes">雙眼皮</option><option value="face">輪廓整形</option><option value="filler">填充玻尿酸</option><option value="other">其他 / 還不確定</option></select>
+          </div>
+          <div class="form-row"><label>想問小仙女的事</label><textarea name="message" placeholder="不限問題，什麼都可以問…" rows="3"></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="form-submit"><span>送出諮詢申請</span></button>
+          <p class="form-note">送出後小仙女會在 24 小時內以 LINE 或電話聯繫你</p>
+        </form>
+        <div class="form-success" id="form-success" style="display:none">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#06C755" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#06C755" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>已收到！</h3>
+          <p>小仙女會盡快透過 LINE 或電話聯繫你 💕</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><p class="footer-logo">小仙女<span>醫美</span></p><p>專業上海醫美顧問，讓每一次蛻變都安心有人陪。</p></div>
+      <div class="footer-links"><a href="#cases">成果案例</a><a href="#process">整形流程</a><a href="#faq">常見問答</a><a href="#contact">立即諮詢</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 小仙女醫美 All Rights Reserved</p><p>所有案例照片均獲客戶授權使用</p></div>
+  </div>
+</footer>
+
+<a href="https://line.me/ti/p/~YOUR_LINE_ID" class="line-float" target="_blank" rel="noopener">
+  <svg width="24" height="24" viewBox="0 0 48 48" fill="none"><path d="M40 22.5c0-7.18-7.178-13-16-13S8 15.32 8 22.5c0 6.5 5.77 11.95 13.55 12.98.53.11 1.25.35 1.43.8.16.41.1 1.06.05 1.47l-.23 1.4c-.07.41-.33 1.6 1.4.87 1.73-.73 9.35-5.5 12.76-9.42C39.1 27.95 40 25.33 40 22.5z" fill="white"/></svg>
+  <span>LINE 諮詢</span>
+</a>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lb-close">✕</button>
+  <div class="lb-images" id="lb-images"></div>
+  <p class="lb-caption" id="lb-caption"></p>
+  <div class="lb-nav">
+    <button class="lb-btn" id="lb-prev">‹ 上一個</button>
+    <button class="lb-btn" id="lb-next">下一個 ›</button>
+  </div>
+</div>
+
+<script>
+// ── Data ──
+const CASES = [
+  {id:1,cat:'nose',tag:'隆鼻',title:'隆鼻案例 #001',desc:'術後第 30 天，完全自然',before:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=300&fit=crop&auto=format',after:'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=300&fit=crop&auto=format'},
+  {id:2,cat:'eyes',tag:'雙眼皮',title:'雙眼皮案例 #002',desc:'術後第 14 天消腫',before:'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=300&fit=crop&auto=format',after:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=300&fit=crop&auto=format'},
+  {id:3,cat:'face',tag:'輪廓',title:'輪廓案例 #003',desc:'術後第 60 天',before:'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=300&fit=crop&auto=format',after:'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop&auto=format'},
+  {id:4,cat:'filler',tag:'填充',title:'填充案例 #004',desc:'玻尿酸術後即效',before:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop&auto=format',after:'https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=400&h=300&fit=crop&auto=format'},
+  {id:5,cat:'nose',tag:'隆鼻',title:'隆鼻案例 #005',desc:'術後第 45 天',before:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop&auto=format',after:'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=300&fit=crop&auto=format'},
+  {id:6,cat:'eyes',tag:'雙眼皮',title:'雙眼皮案例 #006',desc:'術後第 21 天',before:'https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=300&fit=crop&auto=format',after:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&auto=format'},
+];
+
+const FAQ = [
+  {q:'去上海整形安全嗎？',a:'這是最常被問到的問題。我合作的醫院都在上海衛健委有正式登記，可以在官網查詢醫院和醫師的資格。我帶超過 50 位姐妹過去，術後持續追蹤，不讓你一個人面對。'},
+  {q:'需要在上海待幾天？',a:'一般的手術（隆鼻、雙眼皮）建議至少 4–5 天：Day 1 抵達安頓，Day 2 術前檢查，Day 3 手術，Day 4–5 術後觀察確認恢復狀況後再回台。輪廓等大型手術建議 7 天。'},
+  {q:'費用大概是多少？',a:'每個手術費用差異很大。一般參考範圍：雙眼皮約 NT$3–8 萬，隆鼻約 NT$6–15 萬，輪廓手術約 NT$15–40 萬。實際費用以醫師評估為準，我會根據你的需求推薦性價比最高的方案。'},
+  {q:'你收諮詢費嗎？',a:'基礎諮詢（LINE 私訊）完全免費，不限時間和次數。如果你需要我幫你做完整的方案規劃，這部分有收費，費用從諮詢時再說明。'},
+  {q:'回台後如果有問題怎麼辦？',a:'我會在術後第 7、14、30 天主動聯繫你確認狀況，一共追蹤 60 天。如果中間有任何不對勁，立即聯絡我，我會幫你聯繫上海醫師確認。你永遠不是一個人面對的。'},
+];
+
+// ── Nav ──
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>20));
+document.getElementById('burger').onclick=()=>document.getElementById('mobile-menu').classList.toggle('open');
+document.querySelectorAll('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open')));
+
+// ── Cases ──
+let currentFilter='all', filteredCases=CASES;
+function renderCases(){
+  filteredCases=currentFilter==='all'?CASES:CASES.filter(c=>c.cat===currentFilter);
+  document.getElementById('cases-grid').innerHTML=filteredCases.map((c,i)=>`
+    <div class="case-card" onclick="openLB(${i})">
+      <div class="case-images">
+        <img class="case-img" src="${c.before}" alt="術前" loading="lazy">
+        <img class="case-img" src="${c.after}" alt="術後" loading="lazy">
+      </div>
+      <div class="case-label">
+        <span class="case-before-after">術前 → 術後</span>
+        <span class="case-tag">${c.tag}</span>
+        <h4>${c.title}</h4>
+        <p>${c.desc}</p>
+      </div>
+    </div>`).join('');
+}
+document.getElementById('filter-tabs').addEventListener('click',e=>{
+  const btn=e.target.closest('.filter-btn');if(!btn)return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');currentFilter=btn.dataset.filter;renderCases();
+});
+renderCases();
+
+// ── Lightbox ──
+let lbIdx=0;
+function openLB(i){lbIdx=i;showLB();document.getElementById('lightbox').classList.add('open')}
+function showLB(){
+  const c=filteredCases[lbIdx];
+  document.getElementById('lb-images').innerHTML=`<img src="${c.before}" alt="術前"><img src="${c.after}" alt="術後">`;
+  document.getElementById('lb-caption').textContent=`${c.title} · ${c.desc}`;
+}
+document.getElementById('lb-close').onclick=()=>document.getElementById('lightbox').classList.remove('open');
+document.getElementById('lb-prev').onclick=()=>{lbIdx=(lbIdx-1+filteredCases.length)%filteredCases.length;showLB()};
+document.getElementById('lb-next').onclick=()=>{lbIdx=(lbIdx+1)%filteredCases.length;showLB()};
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)document.getElementById('lightbox').classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lightbox').classList.remove('open')});
+
+// ── Process scroll ──
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.process-step').forEach(el=>obs.observe(el));
+
+// ── FAQ ──
+document.getElementById('faq-list').innerHTML=FAQ.map((f,i)=>`
+  <div class="faq-item" id="fi${i}">
+    <button class="faq-q" onclick="toggleFAQ(${i})"><span>${f.q}</span><span class="faq-icon">+</span></button>
+    <div class="faq-a" id="fa${i}">${f.a}</div>
+  </div>`).join('');
+function toggleFAQ(i){
+  const isOpen=document.getElementById('fi'+i).classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(el=>el.classList.remove('open'));
+  document.querySelectorAll('.faq-a').forEach(el=>el.classList.remove('open'));
+  if(!isOpen){document.getElementById('fi'+i).classList.add('open');document.getElementById('fa'+i).classList.add('open')}
+}
+
+// ── Form ──
+document.getElementById('contact-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('contact-form').style.display='none';
+  document.getElementById('form-success').style.display='flex';
+});
+</script>
+</body>
+</html>
